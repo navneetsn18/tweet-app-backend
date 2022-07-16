@@ -33,6 +33,15 @@ public class TwitterApplication {
 
 	private static void userLogin() {
 		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Username or Email: ");
+		String username = scan.next();
+		System.out.println("Enter Password: ");
+		String password = scan.next();
+		if (tweetAppService.loginUser(username, password)) {
+			System.out.println("Login Successful");
+		} else {
+			System.out.println("Login Unsuccessful");
+		}
 	}
 
 	private static void forgotPassword() {

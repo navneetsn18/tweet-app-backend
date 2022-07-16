@@ -27,9 +27,8 @@ public class LoginStatus {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LoginStatus(int id, User user, boolean status) {
+	public LoginStatus(User user, boolean status) {
 		super();
-		this.id = id;
 		this.user = user;
 		this.status = status;
 	}
