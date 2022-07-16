@@ -16,14 +16,14 @@ import com.tweetapp.service.UserService;
 public class TweetAppController {
 
 	@Autowired
-	private static UserService userService;
+	private UserService userService;
 
 	@Autowired
-	private static TweetsService tweetsService;
+	private TweetsService tweetsService;
 
 	private static String loggedInUser = "";
 
-	private static void registerUser() throws TweetAppExceptions {
+	private void registerUser() throws TweetAppExceptions {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the below details:");
 		System.out.println("Name: ");
@@ -42,7 +42,7 @@ public class TweetAppController {
 		}
 	}
 
-	private static void userLogin() throws TweetAppExceptions {
+	private void userLogin() throws TweetAppExceptions {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter Username or Email: ");
 		String username = scan.next();
@@ -58,12 +58,12 @@ public class TweetAppController {
 		}
 	}
 
-	private static void forgotPassword() {
+	private void forgotPassword() {
 		Scanner scan = new Scanner(System.in);
 		// Not Implemented yet
 	}
 
-	public static void afterLogin() throws TweetAppExceptions {
+	public void afterLogin() throws TweetAppExceptions {
 		Scanner scan = new Scanner(System.in);
 		if (loggedInUser != "") {
 			System.out.println("Welcome " + loggedInUser);

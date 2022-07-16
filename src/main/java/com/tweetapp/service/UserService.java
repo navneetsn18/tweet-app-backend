@@ -2,9 +2,12 @@ package com.tweetapp.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.tweetapp.exceptions.TweetAppExceptions;
 import com.tweetapp.model.User;
 
+@Service
 public interface UserService {
 
 	// Get all users

@@ -73,14 +73,15 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void logout() {
 		List<User> users = usersRepository.findAll();
-		for (User user : users) {
-			if (user.isStatus()) {
-				user.setStatus(false);
-				usersRepository.save(user);
-				System.out.println("Successfully LogedOut!");
+		if (users != null) {
+			for (User user : users) {
+				if (user.isStatus()) {
+					user.setStatus(false);
+					usersRepository.save(user);
+					System.out.println("Successfully LogedOut!");
+				}
 			}
 		}
-
 	}
 
 }

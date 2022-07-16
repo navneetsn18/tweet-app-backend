@@ -2,8 +2,11 @@ package com.tweetapp.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.tweetapp.model.Tweets;
 
+@Service
 public interface TweetsService {
 	
 	// Get all the tweets
