@@ -84,7 +84,7 @@ public class TweetAppController {
 			if (choice == 1) {
 				Tweets tweet = new Tweets();
 				System.out.println("Enter Your Tweet: ");
-				String twe = scan.next();
+				String twe = scan.nextLine();
 				tweet.setTweet(twe);
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now = LocalDateTime.now();

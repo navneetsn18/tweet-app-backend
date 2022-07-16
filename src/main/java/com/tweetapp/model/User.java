@@ -3,6 +3,7 @@ package com.tweetapp.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +26,8 @@ public class User {
 	private String password;
 	@Column(columnDefinition = "boolean default false")
 	private boolean status;
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
 	private List<Tweets> tweets = new ArrayList<>();
 
 	public User() {
@@ -46,6 +48,7 @@ public class User {
 				tweets = new ArrayList<Tweets>();
 			}
 			tweets.add(tweet);
+			tweet.setUser(this);
 		}
 	}
 
