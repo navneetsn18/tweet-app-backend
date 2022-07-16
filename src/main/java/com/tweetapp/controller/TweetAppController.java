@@ -1,5 +1,7 @@
 package com.tweetapp.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +53,6 @@ public class TweetAppController {
 		if (userService.loginUser(username, password)) {
 			System.out.println("Login Successful");
 			loggedInUser = username;
-			boolean login = true;
 			afterLogin();
 		} else {
 			System.out.println("Login Unsuccessful");
@@ -65,7 +66,7 @@ public class TweetAppController {
 
 	public void afterLogin() throws TweetAppExceptions {
 		Scanner scan = new Scanner(System.in);
-		if (loggedInUser != "") {
+		if (!loggedInUser.equals("")) {
 			System.out.println("Welcome " + loggedInUser);
 			System.out.println("Choose from the menu below:");
 			System.out.println("1. Post a tweet");
@@ -78,6 +79,12 @@ public class TweetAppController {
 			int choice = scan.nextInt();
 			if (choice == 1) {
 				Tweets tweet = new Tweets();
+				System.out.println("Enter Your Tweet: ");
+				String twe = scan.next();
+				tweet.setTweet(twe);
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+				LocalDateTime now = LocalDateTime.now();
+				tweet.setDate(dtf.format(now));
 				tweetsService.postTweet(loggedInUser, tweet);
 			} else if (choice == 2) {
 				List<Tweets> tweets = tweetsService.getTweets(loggedInUser);

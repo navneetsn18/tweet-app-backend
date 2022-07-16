@@ -23,14 +23,14 @@ public class Tweets {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "username")
 	private User user;
-	private Date date;
+	private String date;
 	private String tweet;
 
 	public Tweets() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tweets(int id, User user, Date date, String tweet) {
+	public Tweets(int id, User user, String date, String tweet) {
 		super();
 		this.user = user;
 		this.date = date;
@@ -53,11 +53,11 @@ public class Tweets {
 		this.user = user;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
