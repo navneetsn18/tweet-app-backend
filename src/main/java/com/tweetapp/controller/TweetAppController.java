@@ -25,7 +25,7 @@ public class TweetAppController {
 
 	private static String loggedInUser = "";
 
-	private void registerUser() throws TweetAppExceptions {
+	private void registerUser() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the below details:");
 		System.out.println("Name: ");
@@ -37,24 +37,28 @@ public class TweetAppController {
 		System.out.println("Password: ");
 		String password = scan.next();
 		User user = new User(username, name, email, password);
-		if (userService.registerUser(user)) {
+		try {
+			if(userService.registerUser(user)){
 			System.out.println("Registration Successful");
-		} else {
+			}
+		} catch (Exception e) {
 			System.out.println("Registration Unsuccessful");
 		}
 	}
 
-	private void userLogin() throws TweetAppExceptions {
+	private void userLogin() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter Username or Email: ");
 		String username = scan.next();
 		System.out.println("Enter Password: ");
 		String password = scan.next();
-		if (userService.loginUser(username, password)) {
-			System.out.println("Login Successful");
-			loggedInUser = username;
-			afterLogin();
-		} else {
+		try {
+			if (userService.loginUser(username, password)) {
+				System.out.println("Login Successful");
+				loggedInUser = username;
+				afterLogin();
+			}
+		} catch (Exception e) {
 			System.out.println("Login Unsuccessful");
 		}
 	}
@@ -64,7 +68,7 @@ public class TweetAppController {
 		// Not Implemented yet
 	}
 
-	public void afterLogin() throws TweetAppExceptions {
+	public void afterLogin(){
 		Scanner scan = new Scanner(System.in);
 		if (!loggedInUser.equals("")) {
 			System.out.println("Welcome " + loggedInUser);
@@ -116,7 +120,11 @@ public class TweetAppController {
 				String oldPassword = scan.next();
 				System.out.println("Enter new password: ");
 				String newPassword = scan.next();
+				try {
 				userService.resetPassword(oldPassword, newPassword);
+				} catch (Exception e) {
+					System.out.println("");
+				}
 			} else if (choice == 6) {
 				userService.logout();
 				loggedInUser = "";
@@ -127,7 +135,7 @@ public class TweetAppController {
 		}
 	}
 
-	public void startApp() throws TweetAppExceptions {
+	public void startApp(){
 		Scanner scan = new Scanner(System.in);
 		boolean temp = true;
 		userService.logout();

@@ -5,14 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.tweetapp.controller.TweetAppController;
-import com.tweetapp.exceptions.TweetAppExceptions;
 
 @SpringBootApplication
 public class TweetApplication {
 
 	private static TweetAppController tweetAppController;
 
-	public static void main(String[] args) throws TweetAppExceptions {
+	public static void main(String[] args){
 		ApplicationContext applicationContext = SpringApplication.run(TweetApplication.class, args);
 		tweetAppController = applicationContext.getBean(TweetAppController.class);
 		tweetAppController.startApp();
