@@ -1,5 +1,8 @@
 package com.tweetapp.controller;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -56,7 +59,7 @@ public class TweetAppController {
 		String password = scan.next();
 		try {
 			User user = userService.loginUser(username, password);
-			if (user!=null) {
+			if (user != null) {
 				System.out.println("Login Successful");
 				loggedInUser = user.getUsername();
 				afterLogin();
@@ -109,7 +112,13 @@ public class TweetAppController {
 			if (choice == 1) {
 				Tweets tweet = new Tweets();
 				System.out.println("Enter Your Tweet: ");
-				String twe = scan.nextLine();
+				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+				String twe = null;
+				try {
+					twe = reader.readLine();
+				} catch (IOException e) {
+					System.out.println("Error Occured");
+				}
 				tweet.setTweet(twe);
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now = LocalDateTime.now();

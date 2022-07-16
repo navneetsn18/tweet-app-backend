@@ -35,6 +35,7 @@ public class TweetServiceImpl implements TweetsService {
 	public void postTweet(String username, Tweets tweet) {
 		User user = userRepository.findByUsername(username);
 		if (user != null) {
+			tweet.setUser(user);
 			tweetsRepository.save(tweet);
 			user.addTweet(tweet);
 			userRepository.save(user);
