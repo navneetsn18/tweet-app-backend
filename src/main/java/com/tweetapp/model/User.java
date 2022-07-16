@@ -35,14 +35,12 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String username, String name, String email, String password, Set<Tweets> tweets) {
+	public User(String username, String name, String email, String password) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.tweets = tweets;
 	}
 
 	public int getId() {

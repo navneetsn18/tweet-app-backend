@@ -24,7 +24,7 @@ public class TwitterApplication {
 		String email = scan.next();
 		System.out.println("Password: ");
 		String password = scan.next();
-		if (tweetAppService.regsiterUser(name, username, email, password)) {
+		if (tweetAppService.regsiterUser(username, name, email, password)) {
 			System.out.println("Registration Successful");
 		} else {
 			System.out.println("Registration Unsuccessful");
