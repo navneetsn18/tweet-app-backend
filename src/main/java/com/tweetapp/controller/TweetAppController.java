@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.tweetapp.exceptions.TweetAppExceptions;
 import com.tweetapp.model.Tweets;
 import com.tweetapp.model.User;
 import com.tweetapp.service.TweetsService;
@@ -120,6 +119,7 @@ public class TweetAppController {
 					System.out.println("Error Occured");
 				}
 				tweet.setTweet(twe);
+				tweet.setUsername(loggedInUser);
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 				LocalDateTime now = LocalDateTime.now();
 				tweet.setDate(dtf.format(now));
@@ -129,7 +129,7 @@ public class TweetAppController {
 				for (Tweets tweet : tweets) {
 					System.out.println(
 							"-----------------------------------------------------------------------------------");
-					System.out.println("Username: " + tweet.getUser().getUsername());
+					System.out.println("Username: " + tweet.getUsername());
 					System.out.println("Date: " + tweet.getDate());
 					System.out.println("Tweet: " + tweet.getTweet());
 					System.out.println("");
@@ -139,7 +139,7 @@ public class TweetAppController {
 				for (Tweets tweet : tweets) {
 					System.out.println(
 							"-----------------------------------------------------------------------------------");
-					System.out.println("Username: " + tweet.getUser().getUsername());
+					System.out.println("Username: " + tweet.getUsername());
 					System.out.println("Date: " + tweet.getDate());
 					System.out.println("Tweet: " + tweet.getTweet());
 					System.out.println("");

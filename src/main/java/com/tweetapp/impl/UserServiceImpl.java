@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
 			usersRepository.save(user);
 		} else {
 			System.out.println("Invalid Password");
+			return null;
 		}
 		return user;
 	}

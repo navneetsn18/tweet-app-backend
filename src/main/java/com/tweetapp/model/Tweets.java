@@ -17,20 +17,22 @@ public class Tweets {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username")
+	@JoinColumn(name = "email")
 	private User user;
 	private String date;
 	private String tweet;
+	private String username;
 
 	public Tweets() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tweets(int id, User user, String date, String tweet) {
+	public Tweets(int id, User user, String date, String tweet, String username) {
 		super();
 		this.user = user;
 		this.date = date;
 		this.tweet = tweet;
+		this.username = username;
 	}
 
 	public Long getId() {
@@ -63,6 +65,14 @@ public class Tweets {
 
 	public void setTweet(String tweet) {
 		this.tweet = tweet;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Override
