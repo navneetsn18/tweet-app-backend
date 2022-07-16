@@ -17,7 +17,7 @@ public interface UserService {
 	public boolean registerUser(User user) throws TweetAppExceptions;
 
 	// validate a user
-	public boolean loginUser(String username, String password) throws TweetAppExceptions;
+	public User loginUser(String username, String password) throws TweetAppExceptions;
 
 	// Reset Password
 	public void resetPassword(String oldPassword, String newPassword) throws TweetAppExceptions;

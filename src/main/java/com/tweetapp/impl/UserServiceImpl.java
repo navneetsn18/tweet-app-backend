@@ -2,6 +2,8 @@ package com.tweetapp.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.transaction.Transactional;
 
@@ -19,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UsersRepository usersRepository;
+	
+	String regex = "^(.+)@(.+)$";
+	Pattern pattern = Pattern.compile(regex);
 
 	@Override
 	public List<User> getAllUsers() {
@@ -28,6 +33,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean registerUser(User user) throws TweetAppExceptions {
+		Matcher matcher = pattern.matcher(user.getEmail());
+		if(matcher.matches() == false) {
+			throw new TweetAppExceptions("Invalid Email Format.");
+		}
 		if (usersRepository.findByEmail(user.getEmail()) != null) {
 			throw new TweetAppExceptions("Email Already Exists.");
 		} else if (usersRepository.findByUsername(user.getUsername()) != null) {
@@ -38,7 +47,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean loginUser(String username, String password) throws TweetAppExceptions {
+	public User loginUser(String username, String password) throws TweetAppExceptions {
 		User user = usersRepository.findByUsername(username);
 		if (user == null) {
 			user = usersRepository.findByEmail(username);
@@ -49,11 +58,10 @@ public class UserServiceImpl implements UserService {
 		if (user.getPassword().equals(password)) {
 			user.setStatus(true);
 			usersRepository.save(user);
-			return true;
 		} else {
 			System.out.println("Invalid Password");
-			return false;
 		}
+		return user;
 	}
 
 	@Override
