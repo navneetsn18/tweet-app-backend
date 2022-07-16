@@ -157,7 +157,7 @@ public class TweetAppController {
 				try {
 					userService.resetPassword(oldPassword, newPassword);
 				} catch (Exception e) {
-					System.out.println("");
+					System.out.println("Password Change Unsuccessful");
 				}
 			} else if (choice == 6) {
 				userService.logout();
