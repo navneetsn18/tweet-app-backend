@@ -1,7 +1,7 @@
 package com.tweetapp.model;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,19 +17,16 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	@Column(name = "us_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "us_username")
 	private String username;
-	@Column(name = "us_name")
 	private String name;
-	@Column(name = "us_email")
 	private String email;
-	@Column(name = "us_password")
 	private String password;
+	@Column(columnDefinition = "boolean default false")
+	private boolean status;
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-	private Set<Tweets> tweets;
+	private List<Tweets> tweets = new ArrayList<>();
 
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -41,6 +38,15 @@ public class User {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+
+	public void addTweet(Tweets tweet) {
+		if (tweet != null) {
+			if (tweets == null) {
+				tweets = new ArrayList<Tweets>();
+			}
+			tweets.add(tweet);
+		}
 	}
 
 	public int getId() {
@@ -83,18 +89,26 @@ public class User {
 		this.password = password;
 	}
 
-	public Set<Tweets> getTweets() {
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public List<Tweets> getTweets() {
 		return tweets;
 	}
 
-	public void setTweets(Set<Tweets> tweets) {
+	public void setTweets(List<Tweets> tweets) {
 		this.tweets = tweets;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", name=" + name + ", email=" + email + ", password="
-				+ password + ", tweets=" + tweets + "]";
+				+ password + ", status=" + status + ", tweets=" + tweets + "]";
 	}
 
 }

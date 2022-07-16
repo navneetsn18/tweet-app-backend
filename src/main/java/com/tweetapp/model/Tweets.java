@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,15 +18,12 @@ import javax.persistence.Table;
 public class Tweets {
 
 	@Id
-	@Column(name = "tw_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@ManyToOne
-	@JoinColumn(name = "tw_us_id")
+	private Long id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "username")
 	private User user;
-	@Column(name = "tw_date")
 	private Date date;
-	@Column(name = "tw_tweet")
 	private String tweet;
 
 	public Tweets() {
@@ -34,17 +32,16 @@ public class Tweets {
 
 	public Tweets(int id, User user, Date date, String tweet) {
 		super();
-		this.id = id;
 		this.user = user;
 		this.date = date;
 		this.tweet = tweet;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
