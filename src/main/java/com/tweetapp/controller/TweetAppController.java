@@ -4,13 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import com.tweetapp.TweetApplication;
 import com.tweetapp.exceptions.TweetAppExceptions;
-import com.tweetapp.impl.UserServiceImpl;
 import com.tweetapp.model.Tweets;
 import com.tweetapp.model.User;
 import com.tweetapp.service.TweetsService;

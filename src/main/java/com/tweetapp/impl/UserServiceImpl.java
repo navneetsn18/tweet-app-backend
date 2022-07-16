@@ -83,21 +83,4 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-	public void getTweets(String username) {
-		List<User> users = usersRepository.findAll();
-		for (User user : users) {
-			if (user.getUsername().equals(username)) {
-				List<Tweets> tweets = user.getTweets();
-				for (Tweets tweet : tweets) {
-					System.out.println(
-							"-----------------------------------------------------------------------------------");
-					System.out.println("Username: " + user.getUsername());
-					System.out.println("Date: " + tweet.getDate());
-					System.out.println("Tweet: " + tweet.getTweet());
-					System.out.println("");
-				}
-			}
-		}
-	}
-
 }
