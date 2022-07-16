@@ -29,18 +29,14 @@ public class TwitterApplication {
 		} else {
 			System.out.println("Registration Unsuccessful");
 		}
-		scan.close();
 	}
 
 	private static void userLogin() {
 		Scanner scan = new Scanner(System.in);
-		scan.close();
 	}
 
 	private static void forgotPassword() {
 		Scanner scan = new Scanner(System.in);
-		scan.close();
-
 	}
 
 	public static void main(String[] args) {
@@ -53,7 +49,7 @@ public class TwitterApplication {
 			System.out.println("Choose from the menu below:");
 			System.out.println("1. Register");
 			System.out.println("2. Login");
-			System.out.print("3. Forgot Password");
+			System.out.println("3. Forgot Password");
 			System.out.println("4. Exit");
 			System.out.println("Enter your choice: ");
 			int choice = scan.nextInt();
@@ -70,7 +66,6 @@ public class TwitterApplication {
 				System.out.println("Enter valid choice.");
 			}
 		}
-		scan.close();
 	}
 
 }
