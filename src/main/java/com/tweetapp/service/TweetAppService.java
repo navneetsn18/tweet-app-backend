@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.tweetapp.model.LoginStatus;
 import com.tweetapp.model.User;
-import com.tweetapp.repository.LoginStatusRepository;
-import com.tweetapp.repository.TweetRepository;
+//import com.tweetapp.repository.LoginStatusRepository;
+//import com.tweetapp.repository.TweetRepository;
 import com.tweetapp.repository.UsersRepository;
 
 @Service
@@ -19,12 +19,6 @@ public class TweetAppService {
 
 	@Autowired
 	private UsersRepository usersRepository;
-
-	@Autowired
-	private TweetRepository tweetRepository;
-
-	@Autowired
-	private LoginStatusRepository loginStatusRepository;
 
 	public boolean regsiterUser(String username, String name, String email, String password) {
 		User user = new User(username, name, email, password);
@@ -37,7 +31,7 @@ public class TweetAppService {
 		}
 		usersRepository.save(user);
 		LoginStatus loginData = new LoginStatus(user, false);
-		loginStatusRepository.save(loginData);
+//		loginStatusRepository.save(loginData);
 		return true;
 	}
 
@@ -51,9 +45,9 @@ public class TweetAppService {
 			}
 		}
 		if (user.getPassword().equals(password)) {
-			LoginStatus loginStatus = loginStatusRepository.findById(user.getId()).get();
-			loginStatus.setStatus(true);
-			loginStatusRepository.save(loginStatus);
+//			LoginStatus loginStatus = loginStatusRepository.findById(user.getId()).get();
+//			loginStatus.setStatus(true);
+//			loginStatusRepository.save(loginStatus);
 			return true;
 		} else {
 			System.out.println("Invalid Password");
