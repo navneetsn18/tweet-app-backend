@@ -81,14 +81,14 @@ public class TweetAppController {
 			List<User> users = userService.getAllUsers();
 			for (User user : users) {
 				if (user.getEmail().equals(email)) {
-					String oldPassword = user.getPassword();
+					String username = user.getUsername();
 					System.out.println("Enter new password: ");
 					String newPassword = scan.next();
 					try {
-						userService.resetPassword(oldPassword, newPassword);
+						userService.forgotPassword(username, newPassword);
 						return;
 					} catch (Exception e) {
-						System.out.println("");
+						System.out.println("Password change unsuccessful");
 					}
 				}
 			}

@@ -22,6 +22,9 @@ public interface UserService {
 	// Reset Password
 	public void resetPassword(String oldPassword, String newPassword) throws TweetAppExceptions;
 
+	// Reset Password
+	public void forgotPassword(String username, String newPassword) throws TweetAppExceptions;
+
 	// Logout
 	public void logout();
 

@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UsersRepository usersRepository;
-	
+
 	String regex = "^(.+)@(.+)$";
 	Pattern pattern = Pattern.compile(regex);
 
@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean registerUser(User user) throws TweetAppExceptions {
 		Matcher matcher = pattern.matcher(user.getEmail());
-		if(matcher.matches() == false) {
+		if (matcher.matches() == false) {
 			throw new TweetAppExceptions("Invalid Email Format.");
 		}
 		if (usersRepository.findByEmail(user.getEmail()) != null) {
@@ -72,7 +72,23 @@ public class UserServiceImpl implements UserService {
 			if (user.isStatus() == true && user.getPassword().equals(oldPassword)) {
 				user.setPassword(newPassword);
 				usersRepository.save(user);
-				System.out.println("Password Successfully Changes!");
+				System.out.println("Password Successfully Changed!");
+				return;
+			} else {
+				throw new TweetAppExceptions("Invalid Password");
+			}
+		}
+	}
+
+	@Override
+	public void forgotPassword(String username, String newPassword) throws TweetAppExceptions {
+		List<User> users = usersRepository.findAll();
+		for (User user : users) {
+			if (user.getUsername().equals(username)) {
+				user.setPassword(newPassword);
+				usersRepository.save(user);
+				System.out.println("Password Successfully Changed!");
+				return;
 			} else {
 				throw new TweetAppExceptions("Invalid Password");
 			}
