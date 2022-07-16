@@ -70,7 +70,7 @@ public class TweetAppController {
 
 	public void afterLogin(){
 		Scanner scan = new Scanner(System.in);
-		if (!loggedInUser.equals("")) {
+		while (!loggedInUser.equals("")) {
 			System.out.println("Welcome " + loggedInUser);
 			System.out.println("Choose from the menu below:");
 			System.out.println("1. Post a tweet");
