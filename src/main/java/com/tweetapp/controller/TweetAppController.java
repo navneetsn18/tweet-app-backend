@@ -78,10 +78,11 @@ public class TweetAppController {
 		if (matcher.matches() == false) {
 			System.out.println("Invalid Email Format.");
 		} else {
+			System.out.println("Enter the username: ");
+			String username = scan.next();
 			List<User> users = userService.getAllUsers();
 			for (User user : users) {
-				if (user.getEmail().equals(email)) {
-					String username = user.getUsername();
+				if (user.getEmail().equals(email) && user.getUsername().equals(username)) {
 					System.out.println("Enter new password: ");
 					String newPassword = scan.next();
 					try {
@@ -90,6 +91,8 @@ public class TweetAppController {
 					} catch (Exception e) {
 						System.out.println("Password change unsuccessful");
 					}
+				}else {
+					System.out.println("Wrong Credentials!!");
 				}
 			}
 		}
