@@ -25,22 +25,22 @@ public class TweetAppController {
 	private TweetsService tweetsService;
 
 	private static String loggedInUser = "";
-	
-	@PostMapping(value = "register")
+
+	@PostMapping(value = "register",produces = "application/json")
 	public ResponseEntity<String> register(@RequestBody User user) {
 		try {
 			boolean result = userService.registerUser(user);
 			if (result) {
-				return ResponseEntity.status(HttpStatus.ACCEPTED).body("Registration Successfull");
+				return ResponseEntity.status(HttpStatus.ACCEPTED).body("{\"message\":\"RegistrationSuccessfull\"}");
 			}
 		} catch (TweetAppExceptions e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\":\"" + e.getMessage() + "\"}");
 		}
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
 	}
 
 	@PostMapping(value = "login")
 	public void login() {
-		
+
 	}
 }
