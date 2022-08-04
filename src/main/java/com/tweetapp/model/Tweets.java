@@ -1,5 +1,6 @@
 package com.tweetapp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,17 +22,21 @@ public class Tweets {
 	private User user;
 	private String date;
 	private String tweet;
+	@Column(columnDefinition = "Integer default 0")
+	private int likes;
 	private String username;
 
 	public Tweets() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tweets(int id, User user, String date, String tweet, String username) {
+	public Tweets(Long id, User user, String date, String tweet, int likes, String username) {
 		super();
+		this.id = id;
 		this.user = user;
 		this.date = date;
 		this.tweet = tweet;
+		this.likes = likes;
 		this.username = username;
 	}
 
@@ -67,6 +72,14 @@ public class Tweets {
 		this.tweet = tweet;
 	}
 
+	public int getLikes() {
+		return likes;
+	}
+
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -77,7 +90,8 @@ public class Tweets {
 
 	@Override
 	public String toString() {
-		return "Tweets [id=" + id + ", user=" + user + ", date=" + date + ", tweet=" + tweet + "]";
+		return "Tweets [id=" + id + ", user=" + user + ", date=" + date + ", tweet=" + tweet + ", likes=" + likes
+				+ ", username=" + username + "]";
 	}
 
 }

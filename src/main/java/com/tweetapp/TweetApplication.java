@@ -12,8 +12,6 @@ public class TweetApplication {
 	private static TweetAppController tweetAppController;
 
 	public static void main(String[] args){
-		ApplicationContext applicationContext = SpringApplication.run(TweetApplication.class, args);
-		tweetAppController = applicationContext.getBean(TweetAppController.class);
-		tweetAppController.startApp();
+		SpringApplication.run(TweetApplication.class, args);
 	}
 }

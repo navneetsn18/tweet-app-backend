@@ -20,8 +20,9 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	private String firstName;
+	private String lastName;
 	private String username;
-	private String name;
 	private String email;
 	private String password;
 	@Column(columnDefinition = "boolean default false")
@@ -34,10 +35,11 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String name, String email, String password) {
+	public User(String firstName, String lastName, String username, String email, String password) {
 		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.username = username;
-		this.name = name;
 		this.email = email;
 		this.password = password;
 	}
@@ -60,20 +62,28 @@ public class User {
 		this.id = id;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getEmail() {
@@ -110,8 +120,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", name=" + name + ", email=" + email + ", password="
-				+ password + ", status=" + status + ", tweets=" + tweets + "]";
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", email=" + email + ", password=" + password + ", status=" + status + ", tweets=" + tweets + "]";
 	}
 
 }
