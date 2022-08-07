@@ -1,44 +1,25 @@
-package com.tweetapp.model;
+package com.tweetapp.dto;
 
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.tweetapp.dto.Reply;
-
-@Entity
-@Table(name = "Tweets")
-public class Tweets {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TweetDto {
 	private Long id;
-	private Date date;
+	private String date;
+	private String time;
 	private String username;
 	private String tweet;
 	private Long likes;
-	@ElementCollection(targetClass=String.class)
 	private List<String> reply;
 
-	public Tweets() {
+	public TweetDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tweets(Long id, Date date, String username, String tweet, Long likes, List<String> reply) {
+	public TweetDto(Long id, String date, String time, String username, String tweet, Long likes, List<String> reply) {
 		super();
 		this.id = id;
 		this.date = date;
+		this.time = time;
 		this.username = username;
 		this.tweet = tweet;
 		this.likes = likes;
@@ -53,12 +34,20 @@ public class Tweets {
 		this.id = id;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public String getUsername() {

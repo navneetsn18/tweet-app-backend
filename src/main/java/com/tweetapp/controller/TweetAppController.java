@@ -3,7 +3,10 @@ package com.tweetapp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,21 +29,64 @@ public class TweetAppController {
 
 	private static String loggedInUser = "";
 
-	@PostMapping(value = "register",produces = "application/json")
-	public ResponseEntity<String> register(@RequestBody User user) {
-		try {
-			boolean result = userService.registerUser(user);
-			if (result) {
-				return ResponseEntity.status(HttpStatus.ACCEPTED).body("{\"message\":\"RegistrationSuccessfull\"}");
-			}
-		} catch (TweetAppExceptions e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\":\"" + e.getMessage() + "\"}");
-		}
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
+	@PostMapping(value = "register", produces = "application/json")
+	public ResponseEntity<?> register(@RequestBody User user) {
+		return null;
 	}
 
-	@PostMapping(value = "login")
-	public void login() {
+	@GetMapping(value = "login", produces = "application/json")
+	public ResponseEntity<?> login(@RequestBody String userLogin) {
+		return null;
+	}
+
+	@GetMapping(value = "{username}/forgot")
+	public void forgotPassword() {
 
 	}
+
+	@GetMapping(value = "all")
+	public void getAllTweets() {
+
+	}
+
+	@GetMapping(value = "users/all")
+	public void getAllUsers() {
+
+	}
+
+	@GetMapping(value = "user/search/username")
+	public void searchByUsername() {
+
+	}
+
+	@GetMapping(value = "username")
+	public void getAllTweetsOfUser() {
+
+	}
+
+	@PostMapping(value = "{username}/add")
+	public void postNewTweet() {
+
+	}
+
+	@PutMapping(value = "{username}/update/{id}")
+	public void updateATweet() {
+
+	}
+
+	@DeleteMapping(value = "{username}/delete/{id}")
+	public void deleteTweet() {
+
+	}
+
+	@PutMapping(value = "{username}/like/{id}")
+	public void likeTweet() {
+
+	}
+
+	@PostMapping(value = "{username}/reply/{id}")
+	public void replyToTweet() {
+
+	}
+
 }

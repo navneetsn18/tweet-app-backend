@@ -1,49 +1,25 @@
-package com.tweetapp.model;
+package com.tweetapp.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "user")
-public class User {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class UserDto {
 	private String firstName;
 	private String lastName;
 	private String username;
 	private String email;
 	private String password;
-	@Column(columnDefinition = "boolean default false")
 	private boolean loggedin;
 
-	public User() {
+	public UserDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int id, String firstName, String lastName, String username, String email, String password,
-			boolean loggedin) {
+	public UserDto(String firstName, String lastName, String username, String email, String password, boolean loggedin) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.loggedin = loggedin;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {

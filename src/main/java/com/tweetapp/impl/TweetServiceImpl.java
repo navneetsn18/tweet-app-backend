@@ -1,45 +1,55 @@
 package com.tweetapp.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tweetapp.model.Tweets;
-import com.tweetapp.model.User;
-import com.tweetapp.repository.TweetsRepository;
-import com.tweetapp.repository.UsersRepository;
+import com.tweetapp.dto.request.TweetRequest;
+import com.tweetapp.dto.response.TweetResponse;
 import com.tweetapp.service.TweetsService;
 
 @Service
 public class TweetServiceImpl implements TweetsService {
 
-	@Autowired
-	private UsersRepository userRepository;
-
-	@Autowired
-	private TweetsRepository tweetsRepository;
-
 	@Override
-	public List<Tweets> getAllTweets() {
-		return tweetsRepository.findAll();
+	public TweetResponse getAllTweets() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public List<Tweets> getTweets(String username) {
-		User user = userRepository.findByUsername(username);
-		return user.getTweets();
+	public TweetResponse getTweetsByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void postTweet(String username, Tweets tweet) {
-		User user = userRepository.findByUsername(username);
-		if (user != null) {
-			tweet.setUser(user);
-			tweetsRepository.save(tweet);
-			user.addTweet(tweet);
-			userRepository.save(user);
-		}
+	public TweetResponse postTweet(String username, TweetRequest tweetRequest) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public TweetResponse deleteTweet(String username, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TweetResponse replyTweet(TweetRequest tweetRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TweetResponse likeTweet(TweetRequest tweetRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TweetResponse updateTweet(TweetRequest tweetRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

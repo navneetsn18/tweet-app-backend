@@ -1,31 +1,23 @@
 package com.tweetapp.service;
 
-import java.util.List;
+import com.tweetapp.dto.request.UserRequest;
+import com.tweetapp.dto.response.UserResponse;
 
-import org.springframework.stereotype.Service;
-
-import com.tweetapp.exceptions.TweetAppExceptions;
-import com.tweetapp.model.User;
-
-@Service
 public interface UserService {
 
 	// Get all users
-	public List<User> getAllUsers();
+	public UserResponse getAllUsers();
+
+	// Get A User
+	public UserResponse findUser(UserRequest userRequest);
+
+	// Get All Logged In Users
+	public UserResponse getAllLoggedInUsers();
 
 	// Register a user
-	public boolean registerUser(User user) throws TweetAppExceptions;
-
-	// validate a user
-	public User loginUser(String username, String password) throws TweetAppExceptions;
+	public UserResponse registerUser(UserRequest userRequest);
 
 	// Reset Password
-	public void resetPassword(String oldPassword, String newPassword) throws TweetAppExceptions;
-
-	// Reset Password
-	public void forgotPassword(String username, String newPassword) throws TweetAppExceptions;
-
-	// Logout
-	public void logout();
+	public UserResponse forgotPassword(UserResponse userResponse);
 
 }
