@@ -9,7 +9,7 @@ public interface UserService {
 	public UserResponse getAllUsers();
 
 	// Get A User
-	public UserResponse findUser(UserRequest userRequest);
+	public UserResponse findUser(String username);
 
 	// Get All Logged In Users
 	public UserResponse getAllLoggedInUsers();
@@ -18,6 +18,6 @@ public interface UserService {
 	public UserResponse registerUser(UserRequest userRequest);
 
 	// Reset Password
-	public UserResponse forgotPassword(UserResponse userResponse);
+	public UserResponse forgotPassword(UserRequest userRequest);
 
 }

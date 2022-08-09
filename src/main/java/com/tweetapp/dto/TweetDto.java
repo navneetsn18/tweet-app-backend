@@ -1,6 +1,7 @@
 package com.tweetapp.dto;
 
 import java.util.List;
+import java.util.Set;
 
 public class TweetDto {
 	private Long id;
@@ -8,14 +9,14 @@ public class TweetDto {
 	private String time;
 	private String username;
 	private String tweet;
-	private Long likes;
-	private List<String> reply;
+	private Set<String> likes;
+	private List<Reply> reply;
 
 	public TweetDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TweetDto(Long id, String date, String time, String username, String tweet, Long likes, List<String> reply) {
+	public TweetDto(Long id, String date, String time, String username, String tweet, Set<String> likes, List<Reply> reply) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -66,19 +67,19 @@ public class TweetDto {
 		this.tweet = tweet;
 	}
 
-	public Long getLikes() {
+	public Set<String> getLikes() {
 		return likes;
 	}
 
-	public void setLikes(Long likes) {
+	public void setLikes(Set<String> likes) {
 		this.likes = likes;
 	}
 
-	public List<String> getReply() {
+	public List<Reply> getReply() {
 		return reply;
 	}
 
-	public void setReply(List<String> reply) {
+	public void setReply(List<Reply> reply) {
 		this.reply = reply;
 	}
 

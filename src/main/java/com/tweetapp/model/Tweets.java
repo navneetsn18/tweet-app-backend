@@ -2,8 +2,13 @@ package com.tweetapp.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,17 +32,29 @@ public class Tweets {
 	private Date date;
 	private String username;
 	private String tweet;
-	private Long likes;
-	@ElementCollection(targetClass=String.class)
-	private List<String> reply;
+	@ElementCollection(targetClass = String.class)
+	private Set<String> likes;
+	@ElementCollection(fetch = FetchType.LAZY)
+	@CollectionTable(name = "tweet_reply", joinColumns = @JoinColumn(name = "tweets_id"))
+	@AttributeOverrides({ @AttributeOverride(name = "username", column = @Column(name = "username")),@AttributeOverride(name = "reply", column = @Column(name = "reply")),@AttributeOverride(name = "date", column = @Column(name = "date")) })
+	private List<Reply> reply;
 
 	public Tweets() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Tweets(Long id, Date date, String username, String tweet, Long likes, List<String> reply) {
+	public Tweets(Long id, Date date, String username, String tweet, Set<String> likes, List<Reply> reply) {
 		super();
 		this.id = id;
+		this.date = date;
+		this.username = username;
+		this.tweet = tweet;
+		this.likes = likes;
+		this.reply = reply;
+	}
+
+	public Tweets(Date date, String username, String tweet, Set<String> likes, List<Reply> reply) {
+		super();
 		this.date = date;
 		this.username = username;
 		this.tweet = tweet;
@@ -77,19 +94,19 @@ public class Tweets {
 		this.tweet = tweet;
 	}
 
-	public Long getLikes() {
+	public Set<String> getLikes() {
 		return likes;
 	}
 
-	public void setLikes(Long likes) {
+	public void setLikes(Set<String> likes) {
 		this.likes = likes;
 	}
 
-	public List<String> getReply() {
+	public List<Reply> getReply() {
 		return reply;
 	}
 
-	public void setReply(List<String> reply) {
+	public void setReply(List<Reply> reply) {
 		this.reply = reply;
 	}
 

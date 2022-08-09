@@ -2,6 +2,9 @@ package com.tweetapp.dto;
 
 import java.util.Date;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Reply {
 
 	private String username;
