@@ -6,6 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tweetapp.dto.UserDto;
@@ -100,7 +102,7 @@ public class UserServiceImpl implements UserService {
 			} else {
 				User user = new User(userRequest.getUserDto().getFirstName(), userRequest.getUserDto().getLastName(),
 						userRequest.getUserDto().getUsername(), userRequest.getUserDto().getEmail(),
-						userRequest.getUserDto().getPassword(), false);
+						passwordEncoder().encode(userRequest.getUserDto().getPassword()), false);
 				userRepository.save(user);
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
@@ -126,7 +128,7 @@ public class UserServiceImpl implements UserService {
 			if (user == null) {
 				userResponse.setStatus("No User Found!");
 			} else {
-				user.setPassword(userRequest.getUserDto().getPassword());
+				user.setPassword(passwordEncoder().encode(userRequest.getUserDto().getPassword()));
 				userRepository.save(user);
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
@@ -140,8 +142,8 @@ public class UserServiceImpl implements UserService {
 		return userResponse;
 	}
 
-//	public PasswordEncoder passwordEncoder() {
-//		return new BCryptPasswordEncoder();
-//	}
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
 }
