@@ -45,6 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/authenticate").permitAll()
 				.antMatchers("/api/v1.0/user/register").permitAll().antMatchers("/api/v1.0/user/forgotpassword")
 				.permitAll().antMatchers(AUTH_WHITELIST).permitAll().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-				.anyRequest().authenticated().and().addFilter(new JWTAuthenticationFilter(authenticationManager()));
+				.anyRequest().authenticated().and().addFilter(new JWTAuthorizationFilter(authenticationManager()));
 	}
 }
