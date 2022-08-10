@@ -26,8 +26,10 @@ public class AppUserService implements UserDetailsService {
 				AppUser appUser = new AppUser(user);
 				return appUser;
 			}
+		} else {
+			AppUser appUser = new AppUser(user);
+			return appUser;
 		}
-		throw new UsernameNotFoundException(username);
 	}
 
 }

@@ -39,6 +39,9 @@ public class AppUser implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
+		if(user.getUsername()==null) {
+			return user.getEmail();
+		}
 		return user.getUsername();
 	}
 
