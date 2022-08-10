@@ -22,8 +22,8 @@ public class AuthenticationController {
 	@Autowired
 	private UsersRepository usersRepository;
 
-	@GetMapping("/login")
-	public HashMap<String, String> login(@RequestHeader(value = "login") String loginString) {
+	@GetMapping("/authenticate")
+	public HashMap<String, String> login(@RequestHeader(value = "Authorization") String loginString) {
 		HashMap<String, String> response = new HashMap<>();
 		String encoded = loginString.substring(6).toString();
 		Base64.Decoder decoder = Base64.getMimeDecoder();
