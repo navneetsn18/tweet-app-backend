@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.tweetapp.model.User;
 
 @Repository
-public interface UsersRepository extends JpaRepository<User, Integer>{
+public interface UsersRepository extends JpaRepository<User, Integer> {
 
 	public User findByEmail(String email);
-	
+
 	public User findByUsername(String username);
-	
+
 	public List<User> findByLoggedinTrue();
 }

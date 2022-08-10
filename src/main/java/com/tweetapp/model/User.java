@@ -37,9 +37,8 @@ public class User {
 		this.password = password;
 		this.loggedin = loggedin;
 	}
-	
-	public User(String firstName, String lastName, String username, String email, String password,
-			boolean loggedin) {
+
+	public User(String firstName, String lastName, String username, String email, String password, boolean loggedin) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;

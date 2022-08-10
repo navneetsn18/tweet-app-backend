@@ -1,6 +1,7 @@
 package com.tweetapp.service;
 
-import com.tweetapp.dto.request.UserRequest;
+import com.tweetapp.dto.request.ForgotPassword;
+import com.tweetapp.dto.request.Register;
 import com.tweetapp.dto.response.UserResponse;
 
 public interface UserService {
@@ -15,9 +16,9 @@ public interface UserService {
 	public UserResponse getAllLoggedInUsers();
 
 	// Register a user
-	public UserResponse registerUser(UserRequest userRequest);
+	public UserResponse registerUser(Register register);
 
 	// Reset Password
-	public UserResponse forgotPassword(UserRequest userRequest);
+	public UserResponse forgotPassword(ForgotPassword forgotPassword);
 
 }

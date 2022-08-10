@@ -16,7 +16,8 @@ public class TweetDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TweetDto(Long id, String date, String time, String username, String tweet, Set<String> likes, List<Reply> reply) {
+	public TweetDto(Long id, String date, String time, String username, String tweet, Set<String> likes,
+			List<Reply> reply) {
 		super();
 		this.id = id;
 		this.date = date;

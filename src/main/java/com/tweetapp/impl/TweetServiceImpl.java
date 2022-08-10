@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 
 import com.tweetapp.dto.Reply;
 import com.tweetapp.dto.TweetDto;
-import com.tweetapp.dto.request.TweetRequest;
+import com.tweetapp.dto.request.PostTweet;
+import com.tweetapp.dto.request.TweetReply;
+import com.tweetapp.dto.request.UpdateTweet;
 import com.tweetapp.dto.response.TweetResponse;
 import com.tweetapp.model.Tweets;
 import com.tweetapp.repository.TweetsRepository;
@@ -69,14 +71,17 @@ public class TweetServiceImpl implements TweetsService {
 	}
 
 	@Override
-	public TweetResponse postTweet(TweetRequest tweetRequest, String username) {
+	public TweetResponse postTweet(PostTweet postTweet) {
 		TweetResponse tweetResponse = new TweetResponse();
-		List<TweetDto> tweetDtos = new ArrayList<>();
 		try {
-			Tweets tweet = new Tweets(new Date(), tweetRequest.getTweet().getUsername(),
-					tweetRequest.getTweet().getTweet(), new HashSet<>(), new ArrayList<>());
+			Tweets tweet = new Tweets(new Date(), postTweet.getUsername(), postTweet.getTweet(), new HashSet<>(),
+					new ArrayList<>());
 			tweetRepository.save(tweet);
-			tweetDtos.add(tweetRequest.getTweet());
+			List<TweetDto> tweetDtos = new ArrayList<>();
+			TweetDto tweetDto = new TweetDto(tweet.getId(), simpleDateFormat.format(tweet.getDate()),
+					simpleTimeFormat.format(tweet.getDate()), tweet.getUsername(), tweet.getTweet(), tweet.getLikes(),
+					tweet.getReply());
+			tweetDtos.add(tweetDto);
 			tweetResponse.setTweetDtos(tweetDtos);
 			tweetResponse.setStatus("Tweet Posted!");
 		} catch (Exception e) {
@@ -98,11 +103,11 @@ public class TweetServiceImpl implements TweetsService {
 	}
 
 	@Override
-	public TweetResponse replyTweet(TweetRequest tweetRequest) {
+	public TweetResponse replyTweet(TweetReply tweetReply) {
 		TweetResponse tweetResponse = new TweetResponse();
 		try {
-			List<Reply> replies = tweetRequest.getTweet().getReply();
-			Optional<Tweets> optional = tweetRepository.findById(tweetRequest.getTweet().getId());
+			List<Reply> replies = tweetReply.getReply();
+			Optional<Tweets> optional = tweetRepository.findById(tweetReply.getId());
 			List<Reply> newReplies = new ArrayList<>();
 			optional.ifPresent(tweet -> {
 				for (Reply reply : replies) {
@@ -122,10 +127,10 @@ public class TweetServiceImpl implements TweetsService {
 	}
 
 	@Override
-	public TweetResponse likeTweet(TweetRequest tweetRequest, String username) {
+	public TweetResponse likeTweet(Long id, String username) {
 		TweetResponse tweetResponse = new TweetResponse();
 		try {
-			Optional<Tweets> optional = tweetRepository.findById(tweetRequest.getTweet().getId());
+			Optional<Tweets> optional = tweetRepository.findById(id);
 			optional.ifPresent(tweet -> {
 				Set<String> likes = tweet.getLikes();
 				if (likes.contains(username)) {
@@ -144,12 +149,12 @@ public class TweetServiceImpl implements TweetsService {
 	}
 
 	@Override
-	public TweetResponse updateTweet(TweetRequest tweetRequest, String username) {
+	public TweetResponse updateTweet(UpdateTweet updateTweet) {
 		TweetResponse tweetResponse = new TweetResponse();
 		try {
-			Optional<Tweets> optional = tweetRepository.findById(tweetRequest.getTweet().getId());
+			Optional<Tweets> optional = tweetRepository.findById(updateTweet.getId());
 			optional.ifPresent(tweet -> {
-				tweet.setTweet(tweetRequest.getTweet().getTweet());
+				tweet.setTweet(updateTweet.getTweet());
 				tweetRepository.save(tweet);
 			});
 			tweetResponse.setStatus("Tweet Updated!");

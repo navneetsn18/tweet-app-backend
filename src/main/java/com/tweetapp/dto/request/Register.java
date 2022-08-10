@@ -1,26 +1,23 @@
-package com.tweetapp.dto;
+package com.tweetapp.dto.request;
 
-public class UserDto {
+public class Register {
 	private String firstName;
 	private String lastName;
 	private String username;
 	private String email;
 	private String password;
-	private boolean loggedin;
 
-	public UserDto() {
+	public Register() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserDto(String firstName, String lastName, String username, String email, String password,
-			boolean loggedin) {
+	public Register(String firstName, String lastName, String username, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.email = email;
 		this.password = password;
-		this.loggedin = loggedin;
 	}
 
 	public String getFirstName() {
@@ -61,14 +58,6 @@ public class UserDto {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public boolean isLoggedin() {
-		return loggedin;
-	}
-
-	public void setLoggedin(boolean loggedin) {
-		this.loggedin = loggedin;
 	}
 
 }

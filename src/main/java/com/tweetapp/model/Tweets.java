@@ -6,7 +6,6 @@ import java.util.Set;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -16,8 +15,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.tweetapp.dto.Reply;
@@ -36,7 +33,9 @@ public class Tweets {
 	private Set<String> likes;
 	@ElementCollection(fetch = FetchType.LAZY)
 	@CollectionTable(name = "tweet_reply", joinColumns = @JoinColumn(name = "tweets_id"))
-	@AttributeOverrides({ @AttributeOverride(name = "username", column = @Column(name = "username")),@AttributeOverride(name = "reply", column = @Column(name = "reply")),@AttributeOverride(name = "date", column = @Column(name = "date")) })
+	@AttributeOverrides({ @AttributeOverride(name = "username", column = @Column(name = "username")),
+			@AttributeOverride(name = "reply", column = @Column(name = "reply")),
+			@AttributeOverride(name = "date", column = @Column(name = "date")) })
 	private List<Reply> reply;
 
 	public Tweets() {

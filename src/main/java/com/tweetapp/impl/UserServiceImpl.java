@@ -11,7 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tweetapp.dto.UserDto;
-import com.tweetapp.dto.request.UserRequest;
+import com.tweetapp.dto.request.ForgotPassword;
+import com.tweetapp.dto.request.Register;
 import com.tweetapp.dto.response.UserResponse;
 import com.tweetapp.model.User;
 import com.tweetapp.repository.UsersRepository;
@@ -89,20 +90,19 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserResponse registerUser(UserRequest userRequest) {
+	public UserResponse registerUser(Register register) {
 		UserResponse userResponse = new UserResponse();
 		try {
-			Matcher matcher = pattern.matcher(userRequest.getUserDto().getEmail());
+			Matcher matcher = pattern.matcher(register.getEmail());
 			if (matcher.matches() == false) {
 				userResponse.setStatus("Invalid Email Format!");
-			} else if (userRepository.findByEmail(userRequest.getUserDto().getEmail()) != null) {
+			} else if (userRepository.findByEmail(register.getEmail()) != null) {
 				userResponse.setStatus("Email Already Exists!");
-			} else if (userRepository.findByUsername(userRequest.getUserDto().getUsername()) != null) {
+			} else if (userRepository.findByUsername(register.getUsername()) != null) {
 				userResponse.setStatus("Username Already Exists!");
 			} else {
-				User user = new User(userRequest.getUserDto().getFirstName(), userRequest.getUserDto().getLastName(),
-						userRequest.getUserDto().getUsername(), userRequest.getUserDto().getEmail(),
-						passwordEncoder().encode(userRequest.getUserDto().getPassword()), false);
+				User user = new User(register.getFirstName(), register.getLastName(), register.getUsername(),
+						register.getEmail(), passwordEncoder().encode(register.getPassword()), false);
 				userRepository.save(user);
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
@@ -117,18 +117,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserResponse forgotPassword(UserRequest userRequest) {
+	public UserResponse forgotPassword(ForgotPassword forgotPassword) {
 		UserResponse userResponse = new UserResponse();
 		List<UserDto> userDtos = new ArrayList<>();
 		try {
-			User user = userRepository.findByUsername(userRequest.getUserDto().getUsername());
+			User user = userRepository.findByUsername(forgotPassword.getUsername());
 			if (user == null) {
-				user = userRepository.findByEmail(userRequest.getUserDto().getEmail());
+				user = userRepository.findByEmail(forgotPassword.getUsername());
 			}
 			if (user == null) {
 				userResponse.setStatus("No User Found!");
 			} else {
-				user.setPassword(passwordEncoder().encode(userRequest.getUserDto().getPassword()));
+				user.setPassword(passwordEncoder().encode(forgotPassword.getPassword()));
 				userRepository.save(user);
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());

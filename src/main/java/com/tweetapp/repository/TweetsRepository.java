@@ -9,7 +9,7 @@ import com.tweetapp.model.Tweets;
 
 @Repository
 public interface TweetsRepository extends JpaRepository<Tweets, Long> {
-	
+
 	public List<Tweets> findByUsername(String username);
-	
+
 }
