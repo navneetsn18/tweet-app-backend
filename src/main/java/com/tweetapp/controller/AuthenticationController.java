@@ -32,6 +32,9 @@ public class AuthenticationController {
 		String token = generateJwt(user);
 		map.put("user", name[0]);
 		User users = usersRepository.findByUsername(name[0]);
+		if(users == null) {
+			users = usersRepository.findByEmail(name[0]);
+		}
 		users.setLoggedin(true);
 		usersRepository.save(users);
 		map.put("Role", "user");
