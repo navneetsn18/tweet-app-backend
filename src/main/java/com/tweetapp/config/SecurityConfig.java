@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity.cors();
 		httpSecurity.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/authenticate").permitAll()
 				.antMatchers("/api/v1.0/user/register").permitAll().antMatchers("/api/v1.0/user/forgotpassword/*")
 				.permitAll().antMatchers(AUTH_WHITELIST).permitAll().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
