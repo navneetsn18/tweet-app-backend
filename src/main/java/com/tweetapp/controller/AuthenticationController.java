@@ -18,6 +18,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class AuthenticationController {
 
 	@Autowired
