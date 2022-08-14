@@ -19,6 +19,9 @@ public interface UserService {
 	public UserResponse registerUser(Register register);
 
 	// Reset Password
-	public UserResponse forgotPassword(ForgotPassword forgotPassword);
+	public UserResponse resetPassword(ForgotPassword forgotPassword);
+	
+	// Reset Password
+	public UserResponse forgotPassword(String username);
 
 }

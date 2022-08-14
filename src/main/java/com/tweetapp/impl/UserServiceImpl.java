@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +17,7 @@ import com.tweetapp.dto.request.Register;
 import com.tweetapp.dto.response.UserResponse;
 import com.tweetapp.model.User;
 import com.tweetapp.repository.UsersRepository;
+import com.tweetapp.service.EmailService;
 import com.tweetapp.service.UserService;
 
 @Service
@@ -23,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UsersRepository userRepository;
+	
+	@Autowired
+	private EmailService emailService;
 
 	String regex = "^(.+)@(.+)$";
 	Pattern pattern = Pattern.compile(regex);
@@ -117,7 +122,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserResponse forgotPassword(ForgotPassword forgotPassword) {
+	public UserResponse resetPassword(ForgotPassword forgotPassword) {
 		UserResponse userResponse = new UserResponse();
 		List<UserDto> userDtos = new ArrayList<>();
 		try {
@@ -141,9 +146,41 @@ public class UserServiceImpl implements UserService {
 		}
 		return userResponse;
 	}
+	
+	@Override
+	public UserResponse forgotPassword(String username) {
+		UserResponse userResponse = new UserResponse();
+		List<UserDto> userDtos = new ArrayList<>();
+		try {
+			User user = userRepository.findByUsername(username);
+			if (user == null) {
+				user = userRepository.findByEmail(username);
+			}
+			if (user == null) {
+				userResponse.setStatus("No User Found!");
+			} else {
+				String password = generatePassword();
+				emailService.sendNewPasswordEmail(user.getUsername(), password, user.getEmail());
+				user.setPassword(passwordEncoder().encode(password));
+				userRepository.save(user);
+				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
+						user.getEmail(), null, user.isLoggedin());
+				userDtos.add(userDto);
+				userResponse.setUserDtos(userDtos);
+				userResponse.setStatus("Password Successfully Changed");
+			}
+		} catch (Exception e) {
+			userResponse.setStatus("Error Occured!");
+		}
+		return userResponse;
+	}
 
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
+	}
+
+	public static String generatePassword() {
+		return RandomStringUtils.randomAlphanumeric(10);
 	}
 
 }
