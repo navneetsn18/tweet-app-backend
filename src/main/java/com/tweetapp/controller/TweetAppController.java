@@ -52,7 +52,7 @@ public class TweetAppController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 	
-	@PostMapping(value = "user/forgotpassword/{username}", produces = "application/json")
+	@GetMapping(value = "user/forgotpassword/{username}", produces = "application/json")
 	public ResponseEntity<?> forgotPassword(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.forgotPassword(username);
 		if (userResponse.getStatus().equals("Password Successfully Changed")) {
