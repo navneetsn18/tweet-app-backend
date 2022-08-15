@@ -23,5 +23,8 @@ public interface UserService {
 	
 	// Reset Password
 	public UserResponse forgotPassword(String username);
+	
+	//Logput
+	public UserResponse logout(String username);
 
 }

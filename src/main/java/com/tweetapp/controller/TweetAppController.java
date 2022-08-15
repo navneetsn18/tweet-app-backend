@@ -43,7 +43,7 @@ public class TweetAppController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
-	@GetMapping(value = "user/resetpassword", produces = "application/json")
+	@PostMapping(value = "user/resetpassword", produces = "application/json")
 	public ResponseEntity<?> resetPassword(@RequestBody ForgotPassword forgotPassword) {
 		UserResponse userResponse = userService.resetPassword(forgotPassword);
 		if (userResponse.getStatus().equals("Password Successfully Changed")) {
@@ -52,7 +52,7 @@ public class TweetAppController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 	
-	@GetMapping(value = "user/forgotpassword/{username}", produces = "application/json")
+	@PostMapping(value = "user/forgotpassword/{username}", produces = "application/json")
 	public ResponseEntity<?> forgotPassword(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.forgotPassword(username);
 		if (userResponse.getStatus().equals("Password Successfully Changed")) {
@@ -83,6 +83,15 @@ public class TweetAppController {
 	public ResponseEntity<?> getAllLoggedInUsers() {
 		UserResponse userResponse = userService.getAllLoggedInUsers();
 		if (userResponse.getStatus().equals("Data Found!")) {
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
+		}
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
+	}
+	
+	@GetMapping(value = "user/logout/{username}", produces = "application/json")
+	public ResponseEntity<?> logout(@PathVariable(name = "username") String username) {
+		UserResponse userResponse = userService.logout(username);
+		if (userResponse.getStatus().equals("Logged Out!")) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);

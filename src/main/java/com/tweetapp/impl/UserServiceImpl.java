@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UsersRepository userRepository;
-	
+
 	@Autowired
 	private EmailService emailService;
 
@@ -146,7 +146,7 @@ public class UserServiceImpl implements UserService {
 		}
 		return userResponse;
 	}
-	
+
 	@Override
 	public UserResponse forgotPassword(String username) {
 		UserResponse userResponse = new UserResponse();
@@ -168,6 +168,27 @@ public class UserServiceImpl implements UserService {
 				userDtos.add(userDto);
 				userResponse.setUserDtos(userDtos);
 				userResponse.setStatus("Password Successfully Changed");
+			}
+		} catch (Exception e) {
+			userResponse.setStatus("Error Occured!");
+		}
+		return userResponse;
+	}
+
+	@Override
+	public UserResponse logout(String username) {
+		UserResponse userResponse = new UserResponse();
+		try {
+			User user = userRepository.findByUsername(username);
+			if (user == null) {
+				user = userRepository.findByEmail(username);
+			}
+			if (user == null) {
+				userResponse.setStatus("No User Found!");
+			} else {
+				user.setLoggedin(false);
+				userRepository.save(user);
+				userResponse.setStatus("Logged Out!");
 			}
 		} catch (Exception e) {
 			userResponse.setStatus("Error Occured!");
