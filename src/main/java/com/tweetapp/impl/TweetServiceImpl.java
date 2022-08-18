@@ -27,7 +27,7 @@ public class TweetServiceImpl implements TweetsService {
 	@Autowired
 	private TweetsRepository tweetRepository;
 
-	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
 	SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("HH:mm:ss");
 
 	@Override
