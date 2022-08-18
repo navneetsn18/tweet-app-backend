@@ -64,6 +64,7 @@ public class TweetServiceImpl implements TweetsService {
 						tweet.getLikes(), tweet.getReply());
 				tweetDtos.add(tweetDto);
 			}
+			Collections.reverse(tweetDtos);
 			tweetResponse.setTweetDtos(tweetDtos);
 			tweetResponse.setStatus("Data Found!");
 		} catch (Exception e) {

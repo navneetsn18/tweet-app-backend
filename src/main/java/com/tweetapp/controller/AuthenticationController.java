@@ -54,7 +54,7 @@ public class AuthenticationController {
 		JwtBuilder builder = Jwts.builder();
 		builder.setSubject(user);
 		builder.setIssuedAt(new Date());
-		builder.setExpiration(new Date((new Date()).getTime() + 1200000));
+		builder.setExpiration(new Date((new Date()).getTime() + 6000000));
 		builder.signWith(SignatureAlgorithm.HS256, "secretkey");
 		String token = builder.compact();
 		return token;
