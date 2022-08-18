@@ -2,6 +2,7 @@ package com.tweetapp.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -42,6 +43,7 @@ public class TweetServiceImpl implements TweetsService {
 						tweet.getLikes(), tweet.getReply());
 				tweetDtos.add(tweetDto);
 			}
+			Collections.reverse(tweetDtos);
 			tweetResponse.setTweetDtos(tweetDtos);
 			tweetResponse.setStatus("Data Found!");
 		} catch (Exception e) {
