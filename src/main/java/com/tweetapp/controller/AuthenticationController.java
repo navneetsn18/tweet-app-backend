@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -18,28 +21,34 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class AuthenticationController {
 
 	@Autowired
 	private UsersRepository usersRepository;
-
+	
 	@GetMapping("/authenticate")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public HashMap<String, String> authenticate(@RequestHeader(value = "Authorization") String authHeader) {
 		HashMap<String, String> map = new HashMap<>();
 		String user = getUser(authHeader);
-		String[] name = user.split(":");
-		String token = generateJwt(user);
-		User users = usersRepository.findByUsername(name[0]);
+		String[] data = user.split(":");
+		User users = usersRepository.findByUsername(data[0]);
 		if(users == null) {
-			users = usersRepository.findByEmail(name[0]);
+			users = usersRepository.findByEmail(data[0]);
+			if(users==null) {
+				map.put("message","Incorrect Username or Password!");
+			}
 		}
-		users.setLoggedin(true);
-		usersRepository.save(users);
-		map.put("user", users.getUsername());
-		map.put("Role", "user");
-		map.put("token", token);
+		if(encoder().matches(data[1], users.getPassword())) {
+			String token = generateJwt(user);
+			users.setLoggedin(true);
+			usersRepository.save(users);
+			map.put("user", users.getUsername());
+			map.put("Role", "user");
+			map.put("token", token);
+		}else {
+			map.put("message","Incorrect Username or Password!");
+		}
 		return map;
 	}
 
@@ -59,5 +68,10 @@ public class AuthenticationController {
 		String token = builder.compact();
 		return token;
 
+	}
+	
+	@Bean
+	public PasswordEncoder encoder() {
+		return new BCryptPasswordEncoder();
 	}
 }
