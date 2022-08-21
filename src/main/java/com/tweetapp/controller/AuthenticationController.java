@@ -18,14 +18,13 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class AuthenticationController {
 
 	@Autowired
 	private UsersRepository usersRepository;
 
 	@GetMapping("/authenticate")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public HashMap<String, String> authenticate(@RequestHeader(value = "Authorization") String authHeader) {
 		HashMap<String, String> map = new HashMap<>();
 		String user = getUser(authHeader);
