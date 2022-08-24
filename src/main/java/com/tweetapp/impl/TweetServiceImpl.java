@@ -21,6 +21,7 @@ import com.tweetapp.dto.response.TweetResponse;
 import com.tweetapp.model.Tweets;
 import com.tweetapp.repository.TweetsRepository;
 import com.tweetapp.service.TweetsService;
+import static com.tweetapp.constants.Constants.*;
 
 @Service
 public class TweetServiceImpl implements TweetsService {
@@ -45,9 +46,9 @@ public class TweetServiceImpl implements TweetsService {
 			}
 			Collections.reverse(tweetDtos);
 			tweetResponse.setTweetDtos(tweetDtos);
-			tweetResponse.setStatus("Data Found!");
+			tweetResponse.setStatus(DATA_FOUND);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -66,9 +67,9 @@ public class TweetServiceImpl implements TweetsService {
 			}
 			Collections.reverse(tweetDtos);
 			tweetResponse.setTweetDtos(tweetDtos);
-			tweetResponse.setStatus("Data Found!");
+			tweetResponse.setStatus(DATA_FOUND);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -86,9 +87,9 @@ public class TweetServiceImpl implements TweetsService {
 					tweet.getReply());
 			tweetDtos.add(tweetDto);
 			tweetResponse.setTweetDtos(tweetDtos);
-			tweetResponse.setStatus("Tweet Posted!");
+			tweetResponse.setStatus(TWEET_POSTED);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -98,9 +99,9 @@ public class TweetServiceImpl implements TweetsService {
 		TweetResponse tweetResponse = new TweetResponse();
 		try {
 			tweetRepository.deleteById(id);
-			tweetResponse.setStatus("Deleted Successfully!");
+			tweetResponse.setStatus(DELETED);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -122,9 +123,9 @@ public class TweetServiceImpl implements TweetsService {
 				tweet.setReply(oldReplies);
 				tweetRepository.save(tweet);
 			});
-			tweetResponse.setStatus("Replied Successfully!");
+			tweetResponse.setStatus(REPLIED);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -144,9 +145,9 @@ public class TweetServiceImpl implements TweetsService {
 				tweet.setLikes(likes);
 				tweetRepository.save(tweet);
 			});
-			tweetResponse.setStatus("Like/Dislike Success!");
+			tweetResponse.setStatus(LIKE_DISLIKE);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}
@@ -160,9 +161,9 @@ public class TweetServiceImpl implements TweetsService {
 				tweet.setTweet(updateTweet.getTweet());
 				tweetRepository.save(tweet);
 			});
-			tweetResponse.setStatus("Tweet Updated!");
+			tweetResponse.setStatus(TWEET_UPDATED);
 		} catch (Exception e) {
-			tweetResponse.setStatus("Error Occured!");
+			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
 	}

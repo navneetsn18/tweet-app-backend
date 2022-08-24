@@ -19,6 +19,7 @@ import com.tweetapp.model.User;
 import com.tweetapp.repository.UsersRepository;
 import com.tweetapp.service.EmailService;
 import com.tweetapp.service.UserService;
+import static com.tweetapp.constants.Constants.*;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -44,9 +45,9 @@ public class UserServiceImpl implements UserService {
 				userDtos.add(userDto);
 			}
 			userResponse.setUserDtos(userDtos);
-			userResponse.setStatus("Data Found!");
+			userResponse.setStatus(DATA_FOUND);
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -61,16 +62,16 @@ public class UserServiceImpl implements UserService {
 				user = userRepository.findByEmail(username);
 			}
 			if (user == null) {
-				userResponse.setStatus("No User Found!");
+				userResponse.setStatus(NO_USER_FOUND);
 			} else {
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
 				userDtos.add(userDto);
 				userResponse.setUserDtos(userDtos);
-				userResponse.setStatus("Data Found!");
+				userResponse.setStatus(DATA_FOUND);
 			}
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -87,9 +88,9 @@ public class UserServiceImpl implements UserService {
 				userDtos.add(userDto);
 			}
 			userResponse.setUserDtos(userDtos);
-			userResponse.setStatus("Data Found!");
+			userResponse.setStatus(DATA_FOUND);
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -100,11 +101,11 @@ public class UserServiceImpl implements UserService {
 		try {
 			Matcher matcher = pattern.matcher(register.getEmail());
 			if (matcher.matches() == false) {
-				userResponse.setStatus("Invalid Email Format!");
+				userResponse.setStatus(INVALID_EMAIL);
 			} else if (userRepository.findByEmail(register.getEmail()) != null) {
-				userResponse.setStatus("Email Already Exists!");
+				userResponse.setStatus(EMAIL_ALREADY_EXISTS);
 			} else if (userRepository.findByUsername(register.getUsername()) != null) {
-				userResponse.setStatus("Username Already Exists!");
+				userResponse.setStatus(USERNAME_ALREADY_EXISTS);
 			} else {
 				User user = new User(register.getFirstName(), register.getLastName(), register.getUsername(),
 						register.getEmail(), passwordEncoder().encode(register.getPassword()), false);
@@ -112,11 +113,11 @@ public class UserServiceImpl implements UserService {
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
 				userResponse.setUserDtos(List.of(userDto));
-				userResponse.setStatus("User Added!");
+				userResponse.setStatus(USER_ADDED);
 			}
 
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -131,7 +132,7 @@ public class UserServiceImpl implements UserService {
 				user = userRepository.findByEmail(forgotPassword.getUsername());
 			}
 			if (user == null) {
-				userResponse.setStatus("No User Found!");
+				userResponse.setStatus(NO_USER_FOUND);
 			} else {
 				user.setPassword(passwordEncoder().encode(forgotPassword.getPassword()));
 				userRepository.save(user);
@@ -139,10 +140,10 @@ public class UserServiceImpl implements UserService {
 						user.getEmail(), null, user.isLoggedin());
 				userDtos.add(userDto);
 				userResponse.setUserDtos(userDtos);
-				userResponse.setStatus("Password Successfully Changed");
+				userResponse.setStatus(PASSWORD_CHANGED);
 			}
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -157,7 +158,7 @@ public class UserServiceImpl implements UserService {
 				user = userRepository.findByEmail(username);
 			}
 			if (user == null) {
-				userResponse.setStatus("No User Found!");
+				userResponse.setStatus(NO_USER_FOUND);
 			} else {
 				String password = generatePassword();
 				emailService.sendNewPasswordEmail(user.getUsername(), password, user.getEmail());
@@ -167,10 +168,10 @@ public class UserServiceImpl implements UserService {
 						user.getEmail(), null, user.isLoggedin());
 				userDtos.add(userDto);
 				userResponse.setUserDtos(userDtos);
-				userResponse.setStatus("Password Successfully Changed");
+				userResponse.setStatus(PASSWORD_CHANGED);
 			}
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}
@@ -184,14 +185,14 @@ public class UserServiceImpl implements UserService {
 				user = userRepository.findByEmail(username);
 			}
 			if (user == null) {
-				userResponse.setStatus("No User Found!");
+				userResponse.setStatus(NO_USER_FOUND);
 			} else {
 				user.setLoggedin(false);
 				userRepository.save(user);
-				userResponse.setStatus("Logged Out!");
+				userResponse.setStatus(LOGGED_OUT);
 			}
 		} catch (Exception e) {
-			userResponse.setStatus("Error Occured!");
+			userResponse.setStatus(ERROR_OCCURED);
 		}
 		return userResponse;
 	}

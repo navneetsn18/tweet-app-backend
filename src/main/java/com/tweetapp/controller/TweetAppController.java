@@ -22,6 +22,7 @@ import com.tweetapp.dto.response.TweetResponse;
 import com.tweetapp.dto.response.UserResponse;
 import com.tweetapp.service.TweetsService;
 import com.tweetapp.service.UserService;
+import static com.tweetapp.constants.Constants.*;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -35,126 +36,126 @@ public class TweetAppController {
 	private TweetsService tweetsService;
 
 	@PostMapping(value = "user/register", produces = "application/json")
-	public ResponseEntity<?> register(@RequestBody Register register) {
+	public ResponseEntity<UserResponse> register(@RequestBody Register register) {
 		UserResponse userResponse = userService.registerUser(register);
-		if (userResponse.getStatus().equals("User Added!")) {
+		if (userResponse.getStatus().equals(USER_ADDED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
 	@PostMapping(value = "user/resetpassword", produces = "application/json")
-	public ResponseEntity<?> resetPassword(@RequestBody ForgotPassword forgotPassword) {
+	public ResponseEntity<UserResponse> resetPassword(@RequestBody ForgotPassword forgotPassword) {
 		UserResponse userResponse = userService.resetPassword(forgotPassword);
-		if (userResponse.getStatus().equals("Password Successfully Changed")) {
+		if (userResponse.getStatus().equals(PASSWORD_CHANGED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 	
 	@GetMapping(value = "user/forgotpassword/{username}", produces = "application/json")
-	public ResponseEntity<?> forgotPassword(@PathVariable(name = "username") String username) {
+	public ResponseEntity<UserResponse> forgotPassword(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.forgotPassword(username);
-		if (userResponse.getStatus().equals("Password Successfully Changed")) {
+		if (userResponse.getStatus().equals(PASSWORD_CHANGED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
 	@GetMapping(value = "user/all", produces = "application/json")
-	public ResponseEntity<?> getAllUsers() {
+	public ResponseEntity<UserResponse> getAllUsers() {
 		UserResponse userResponse = userService.getAllUsers();
-		if (userResponse.getStatus().equals("Data Found!")) {
+		if (userResponse.getStatus().equals(DATA_FOUND)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
 	@GetMapping(value = "user/search/{username}", produces = "application/json")
-	public ResponseEntity<?> searchByUsername(@PathVariable(name = "username") String username) {
+	public ResponseEntity<UserResponse> searchByUsername(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.findUser(username);
-		if (userResponse.getStatus().equals("Data Found!")) {
+		if (userResponse.getStatus().equals(DATA_FOUND)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
 	@GetMapping(value = "user/getallloggedinusers", produces = "application/json")
-	public ResponseEntity<?> getAllLoggedInUsers() {
+	public ResponseEntity<UserResponse> getAllLoggedInUsers() {
 		UserResponse userResponse = userService.getAllLoggedInUsers();
-		if (userResponse.getStatus().equals("Data Found!")) {
+		if (userResponse.getStatus().equals(DATA_FOUND)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 	
 	@GetMapping(value = "user/logout/{username}", produces = "application/json")
-	public ResponseEntity<?> logout(@PathVariable(name = "username") String username) {
+	public ResponseEntity<UserResponse> logout(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.logout(username);
-		if (userResponse.getStatus().equals("Logged Out!")) {
+		if (userResponse.getStatus().equals(LOGGED_OUT)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(userResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
 
 	@GetMapping(value = "tweets/all", produces = "application/json")
-	public ResponseEntity<?> getAllTweets() {
+	public ResponseEntity<TweetResponse> getAllTweets() {
 		TweetResponse tweetResponse = tweetsService.getAllTweets();
-		if (tweetResponse.getStatus().equals("Data Found!")) {
+		if (tweetResponse.getStatus().equals(DATA_FOUND)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@GetMapping(value = "tweets/{username}", produces = "application/json")
-	public ResponseEntity<?> getAllTweetsOfUser(@PathVariable("username") String username) {
+	public ResponseEntity<TweetResponse> getAllTweetsOfUser(@PathVariable("username") String username) {
 		TweetResponse tweetResponse = tweetsService.getTweetsByUsername(username);
-		if (tweetResponse.getStatus().equals("Data Found!")) {
+		if (tweetResponse.getStatus().equals(DATA_FOUND)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@PostMapping(value = "tweets/add", produces = "application/json")
-	public ResponseEntity<?> postNewTweet(@RequestBody PostTweet postTweet) {
+	public ResponseEntity<TweetResponse> postNewTweet(@RequestBody PostTweet postTweet) {
 		TweetResponse tweetResponse = tweetsService.postTweet(postTweet);
-		if (tweetResponse.getStatus().equals("Tweet Posted!")) {
+		if (tweetResponse.getStatus().equals(TWEET_POSTED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@PutMapping(value = "tweets/update", produces = "application/json")
-	public ResponseEntity<?> updateATweet(@RequestBody UpdateTweet updateTweet) {
+	public ResponseEntity<TweetResponse> updateATweet(@RequestBody UpdateTweet updateTweet) {
 		TweetResponse tweetResponse = tweetsService.updateTweet(updateTweet);
-		if (tweetResponse.getStatus().equals("Tweet Updated!")) {
+		if (tweetResponse.getStatus().equals(TWEET_UPDATED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@DeleteMapping(value = "tweets/delete/{username}/{id}", produces = "application/json")
-	public ResponseEntity<?> deleteTweet(@PathVariable("username") String username, @PathVariable("id") Long id) {
+	public ResponseEntity<TweetResponse> deleteTweet(@PathVariable("username") String username, @PathVariable("id") Long id) {
 		TweetResponse tweetResponse = tweetsService.deleteTweet(username, id);
-		if (tweetResponse.getStatus().equals("Deleted Successfully!")) {
+		if (tweetResponse.getStatus().equals(DELETED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@PutMapping(value = "tweets/like/{username}/{id}", produces = "application/json")
-	public ResponseEntity<?> likeTweet(@PathVariable("id") Long id, @PathVariable("username") String username) {
+	public ResponseEntity<TweetResponse> likeTweet(@PathVariable("id") Long id, @PathVariable("username") String username) {
 		TweetResponse tweetResponse = tweetsService.likeTweet(id, username);
-		if (tweetResponse.getStatus().equals("Like/Dislike Success!")) {
+		if (tweetResponse.getStatus().equals(LIKE_DISLIKE)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@PostMapping(value = "tweets/reply", produces = "application/json")
-	public ResponseEntity<?> replyToTweet(@RequestBody TweetReply tweetReply) {
+	public ResponseEntity<TweetResponse> replyToTweet(@RequestBody TweetReply tweetReply) {
 		TweetResponse tweetResponse = tweetsService.replyTweet(tweetReply);
-		if (tweetResponse.getStatus().equals("Replied Successfully!")) {
+		if (tweetResponse.getStatus().equals(REPLIED)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);

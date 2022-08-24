@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tweetapp.model.User;
 import com.tweetapp.repository.UsersRepository;
+import static com.tweetapp.constants.Constants.*;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -36,10 +37,10 @@ public class AuthenticationController {
 		if(users == null) {
 			users = usersRepository.findByEmail(data[0]);
 			if(users==null) {
-				map.put("message","Incorrect Username or Password!");
+				map.put("message",INCORRECT_USERNAME_OR_PASS);
 			}
 		}
-		if(encoder().matches(data[1], users.getPassword())) {
+		if(null != users && encoder().matches(data[1], users.getPassword())) {
 			String token = generateJwt(user);
 			users.setLoggedin(true);
 			usersRepository.save(users);
@@ -47,7 +48,7 @@ public class AuthenticationController {
 			map.put("Role", "user");
 			map.put("token", token);
 		}else {
-			map.put("message","Incorrect Username or Password!");
+			map.put("message",INCORRECT_USERNAME_OR_PASS);
 		}
 		return map;
 	}

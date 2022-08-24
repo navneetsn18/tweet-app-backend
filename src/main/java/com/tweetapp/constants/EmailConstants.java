@@ -14,4 +14,8 @@ public class EmailConstants {
 	public static final int DEFAULT_PORT = 587;
 	public static final String SMTP_STARTTLS_ENABLE = "mail.smtp.starttls.enable";
 	public static final String SMTP_STARTTLS_REQUIRED = "mail.smtp.starttls.required";
+	
+	private EmailConstants() {
+		
+	}
 }
