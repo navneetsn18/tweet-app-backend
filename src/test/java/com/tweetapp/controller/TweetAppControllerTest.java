@@ -31,7 +31,7 @@ import com.tweetapp.service.UserService;
 
 @ContextConfiguration(classes = { TweetAppController.class })
 @ExtendWith(SpringExtension.class)
-class TweetAppControllerTest {
+public class TweetAppControllerTest {
 	@Autowired
 	private TweetAppController tweetAppController;
 
@@ -41,11 +41,8 @@ class TweetAppControllerTest {
 	@MockBean
 	private UserService userService;
 
-	/**
-	 * Method under test: {@link TweetAppController#resetPassword(ForgotPassword)}
-	 */
 	@Test
-	void testResetPassword() throws Exception {
+	public void testResetPassword() throws Exception {
 		when(userService.resetPassword((ForgotPassword) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 
 		ForgotPassword forgotPassword = new ForgotPassword();
@@ -61,11 +58,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#forgotPassword(String)}
-	 */
 	@Test
-	void testForgotPassword() throws Exception {
+	public void testForgotPassword() throws Exception {
 		when(userService.forgotPassword((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
 				.get("/api/v1.0/user/forgotpassword/{username}", "janedoe");
@@ -76,11 +70,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#getAllUsers()}
-	 */
 	@Test
-	void testGetAllUsers() throws Exception {
+	public void testGetAllUsers() throws Exception {
 		when(userService.getAllUsers()).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/all");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -90,11 +81,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#getAllLoggedInUsers()}
-	 */
 	@Test
-	void testGetAllLoggedInUsers() throws Exception {
+	public void testGetAllLoggedInUsers() throws Exception {
 		when(userService.getAllLoggedInUsers()).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/getallloggedinusers");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -104,11 +92,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#logout(String)}
-	 */
 	@Test
-	void testLogout() throws Exception {
+	public void testLogout() throws Exception {
 		when(userService.logout((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/logout/{username}",
 				"janedoe");
@@ -119,11 +104,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#getAllTweets()}
-	 */
 	@Test
-	void testGetAllTweets() throws Exception {
+	public void testGetAllTweets() throws Exception {
 		when(tweetsService.getAllTweets()).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/tweets/all");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -133,11 +115,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#deleteTweet(String, Long)}
-	 */
 	@Test
-	void testDeleteTweet() throws Exception {
+	public void testDeleteTweet() throws Exception {
 		when(tweetsService.deleteTweet((String) any(), (Long) any()))
 				.thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
@@ -149,11 +128,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#likeTweet(Long, String)}
-	 */
 	@Test
-	void testLikeTweet() throws Exception {
+	public void testLikeTweet() throws Exception {
 		when(tweetsService.likeTweet((Long) any(), (String) any()))
 				.thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
@@ -165,11 +141,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#getAllTweetsOfUser(String)}
-	 */
 	@Test
-	void testGetAllTweetsOfUser() throws Exception {
+	public void testGetAllTweetsOfUser() throws Exception {
 		when(tweetsService.getTweetsByUsername((String) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/tweets/{username}",
 				"janedoe");
@@ -180,11 +153,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#postNewTweet(PostTweet)}
-	 */
 	@Test
-	void testPostNewTweet() throws Exception {
+	public void testPostNewTweet() throws Exception {
 		when(tweetsService.postTweet((PostTweet) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		PostTweet postTweet = new PostTweet();
@@ -200,11 +170,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#register(Register)}
-	 */
 	@Test
-	void testRegister() throws Exception {
+	public void testRegister() throws Exception {
 		when(userService.registerUser((Register) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 
 		Register register = new Register();
@@ -223,11 +190,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#replyToTweet(TweetReply)}
-	 */
 	@Test
-	void testReplyToTweet() throws Exception {
+	public void testReplyToTweet() throws Exception {
 		when(tweetsService.replyTweet((TweetReply) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		TweetReply tweetReply = new TweetReply();
@@ -243,11 +207,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"tweetDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#searchByUsername(String)}
-	 */
 	@Test
-	void testSearchByUsername() throws Exception {
+	public void testSearchByUsername() throws Exception {
 		when(userService.findUser((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/search/{username}",
 				"janedoe");
@@ -258,11 +219,8 @@ class TweetAppControllerTest {
 				.andExpect(MockMvcResultMatchers.content().string("{\"userDtos\":[],\"status\":\"?\"}"));
 	}
 
-	/**
-	 * Method under test: {@link TweetAppController#updateATweet(UpdateTweet)}
-	 */
 	@Test
-	void testUpdateATweet() throws Exception {
+	public void testUpdateATweet() throws Exception {
 		when(tweetsService.updateTweet((UpdateTweet) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		UpdateTweet updateTweet = new UpdateTweet();

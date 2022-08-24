@@ -20,50 +20,42 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 @ContextConfiguration(classes = { AuthenticationController.class })
 @ExtendWith(SpringExtension.class)
-class AuthenticationControllerTest {
+public class AuthenticationControllerTest {
 	@Autowired
 	private AuthenticationController authenticationController;
 
 	@MockBean
 	private UsersRepository usersRepository;
 
-	/**
-	 * Method under test: {@link AuthenticationController#authenticate(String)}
-	 */
 	@Test
-	void testAuthenticate() throws Exception {
+	public void testAuthenticate() throws Exception {
 		User user = new User();
-		user.setEmail("jane.doe@example.org");
-		user.setFirstName("Jane");
-		user.setId(1);
-		user.setLastName("Doe");
+		user.setEmail("navneetsn18@gmail.com");
+		user.setFirstName("Navneet");
+		user.setLastName("Negi");
 		user.setLoggedin(true);
-		user.setPassword("pass");
-		user.setUsername("janedoe");
+		user.setPassword("password");
+		user.setUsername("navneetsn18");
 
 		User user1 = new User();
-		user1.setEmail("jane.doe@example.org");
-		user1.setFirstName("Jane");
-		user1.setId(1);
-		user1.setLastName("Doe");
+		user1.setEmail("navneetsn18@gmail.com");
+		user1.setFirstName("Navneet");
+		user1.setLastName("Negi");
 		user1.setLoggedin(true);
-		user1.setPassword("pass");
-		user1.setUsername("janedoe");
+		user1.setPassword("password");
+		user1.setUsername("navneetsn18");
 		when(usersRepository.findByEmail((String) any())).thenReturn(user);
 		when(usersRepository.findByUsername((String) any())).thenReturn(user1);
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/authenticate")
-				.header("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==");
+				.header("Authorization", "Basic bmF2bmVldHNuMTg6cGFzc3dvcmQ=");
 		MockMvcBuilders.standaloneSetup(authenticationController).build().perform(requestBuilder)
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentType("application/json"))
 				.andExpect(MockMvcResultMatchers.content().string("{\"message\":\"Incorrect Username or Password!\"}"));
 	}
 
-	/**
-	 * Method under test: {@link AuthenticationController#encoder()}
-	 */
 	@Test
-	void testEncoder() {
+	public void testEncoder() {
 		assertTrue(authenticationController.encoder() instanceof BCryptPasswordEncoder);
 	}
 }

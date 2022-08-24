@@ -812,3 +812,615 @@ org.springframework.security.web.firewall.RequestRejectedException: The request 
 2022-08-24 14:57:24,467 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 9.838 seconds (JVM running for 14.353)
 2022-08-24 14:57:24,610 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-08-24 14:57:24,639 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 15:00:53,738 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 1252 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 15:00:53,741 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 15:00:56,793 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 15:00:56,904 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 15:00:56,989 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 15:00:57,260 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 15:00:57,850 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 15:00:57,885 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 15:00:59,116 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 15:01:01,878 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 15:01:03,044 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 15:01:03,076 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 15:01:03,157 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 15:01:03,385 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 15:01:03,395 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 15:01:03,399 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 15:01:03,403 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 15:01:03,407 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 15:01:03,410 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 15:01:03,413 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 15:01:03,417 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 15:01:03,420 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 15:01:03,427 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 15:01:03,432 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 15:01:03,435 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 15:01:03,440 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 15:01:03,446 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 15:01:03,449 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 15:01:03,451 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 15:01:03,454 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 15:01:03,459 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 15:01:03,462 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 15:01:03,465 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 15:01:03,599 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.315 seconds (JVM running for 15.201)
+2022-08-24 15:01:03,754 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 15:01:03,787 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 17:26:03,486 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 1160 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 17:26:03,492 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 17:26:08,473 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 17:26:08,761 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 17:26:08,918 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 17:26:09,508 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 17:26:10,574 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 17:26:10,647 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 17:26:12,622 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 17:26:16,658 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 17:26:18,059 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 17:26:18,111 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 17:26:18,188 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 17:26:18,446 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 17:26:18,452 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 17:26:18,456 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 17:26:18,461 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 17:26:18,465 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 17:26:18,469 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 17:26:18,473 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 17:26:18,478 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 17:26:18,482 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 17:26:18,486 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 17:26:18,490 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 17:26:18,494 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 17:26:18,498 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 17:26:18,507 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 17:26:18,511 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 17:26:18,515 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 17:26:18,519 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 17:26:18,523 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 17:26:18,526 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 17:26:18,531 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 17:26:18,708 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 15.942 seconds (JVM running for 25.207)
+2022-08-24 17:26:18,839 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 17:26:18,881 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 17:27:08,375 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 756 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 17:27:08,377 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 17:27:11,976 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 17:27:12,117 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 17:27:12,218 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 17:27:12,570 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 17:27:13,335 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 17:27:13,378 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 17:27:15,003 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 17:27:18,317 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 17:27:19,511 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 17:27:19,556 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 17:27:19,635 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 17:27:19,910 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 17:27:19,914 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 17:27:19,919 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 17:27:19,926 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 17:27:19,931 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 17:27:19,935 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 17:27:19,940 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 17:27:19,945 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 17:27:19,949 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 17:27:19,955 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 17:27:19,959 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 17:27:19,963 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 17:27:19,967 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 17:27:19,972 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 17:27:19,978 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 17:27:19,982 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 17:27:19,988 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 17:27:19,991 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 17:27:19,995 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 17:27:20,001 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 17:27:20,151 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 12.239 seconds (JVM running for 18.853)
+2022-08-24 17:27:20,272 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 17:27:20,304 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 17:35:47,778 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 10116 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 17:35:47,779 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 17:35:51,254 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 17:35:51,451 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 17:35:51,559 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 17:35:51,828 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 17:35:52,599 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 17:35:52,657 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 17:35:54,127 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 17:35:57,262 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 17:35:58,503 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 17:35:58,547 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 17:35:58,626 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 17:35:58,852 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 17:35:58,857 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 17:35:58,861 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 17:35:58,865 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 17:35:58,871 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 17:35:58,878 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 17:35:58,884 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 17:35:58,888 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 17:35:58,892 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 17:35:58,897 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 17:35:58,902 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 17:35:58,906 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 17:35:58,911 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 17:35:58,915 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 17:35:58,923 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 17:35:58,926 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 17:35:58,930 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 17:35:58,934 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 17:35:58,938 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 17:35:58,942 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 17:35:59,095 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 11.816 seconds (JVM running for 19.377)
+2022-08-24 17:35:59,213 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 17:35:59,247 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 18:29:25,502 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 12076 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 18:29:25,505 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 18:29:29,170 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 18:29:29,322 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 18:29:29,472 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 18:29:29,794 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 18:29:30,650 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 18:29:30,702 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 18:29:32,488 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 18:29:35,598 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 18:29:36,835 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 18:29:36,881 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 18:29:36,966 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 18:29:37,209 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 18:29:37,216 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 18:29:37,221 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 18:29:37,226 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 18:29:37,231 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 18:29:37,237 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 18:29:37,242 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 18:29:37,248 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 18:29:37,252 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 18:29:37,256 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 18:29:37,261 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 18:29:37,266 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 18:29:37,271 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 18:29:37,281 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 18:29:37,286 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 18:29:37,291 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 18:29:37,297 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 18:29:37,301 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 18:29:37,305 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 18:29:37,309 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 18:29:37,479 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 12.464 seconds (JVM running for 20.908)
+2022-08-24 18:29:37,670 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 18:29:37,687 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:13:52,162 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 9276 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:13:52,164 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:13:55,044 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:13:55,242 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:13:55,357 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:13:55,648 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:13:56,350 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:13:56,388 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:13:57,732 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:14:00,262 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:14:01,355 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:14:01,395 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:14:01,464 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:14:01,686 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:14:01,690 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:14:01,694 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:14:01,697 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:14:01,701 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:14:01,705 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:14:01,708 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:14:01,714 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:14:01,717 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:14:01,720 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:14:01,723 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:14:01,727 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:14:01,730 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:14:01,733 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:14:01,740 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:14:01,744 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:14:01,747 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:14:01,750 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:14:01,753 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:14:01,757 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:14:01,905 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.208 seconds (JVM running for 17.429)
+2022-08-24 19:14:02,013 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:14:02,025 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:16:10,677 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 13720 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:16:10,678 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:16:13,812 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:16:14,003 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:16:14,107 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:16:14,407 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:16:15,186 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:16:15,242 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:16:16,581 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:16:19,289 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:16:20,515 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:16:20,563 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:16:20,637 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:16:20,871 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:16:20,875 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:16:20,879 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:16:20,883 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:16:20,887 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:16:20,891 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:16:20,895 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:16:20,899 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:16:20,902 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:16:20,906 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:16:20,910 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:16:20,914 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:16:20,918 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:16:20,922 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:16:20,928 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:16:20,931 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:16:20,936 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:16:20,940 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:16:20,944 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:16:20,950 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:16:21,107 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.886 seconds (JVM running for 17.822)
+2022-08-24 19:16:21,237 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:16:21,276 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:19:50,148 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 1152 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:19:50,150 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:19:53,202 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:19:53,374 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:19:53,486 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:19:53,798 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:19:54,483 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:19:54,521 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:19:56,084 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:19:58,901 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:20:00,034 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:20:00,084 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:20:00,192 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:20:00,424 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:20:00,429 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:20:00,433 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:20:00,437 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:20:00,441 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:20:00,445 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:20:00,449 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:20:00,452 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:20:00,456 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:20:00,461 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:20:00,466 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:20:00,472 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:20:00,476 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:20:00,480 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:20:00,486 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:20:00,490 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:20:00,494 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:20:00,498 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:20:00,502 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:20:00,505 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:20:00,674 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.977 seconds (JVM running for 18.056)
+2022-08-24 19:20:00,790 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:20:00,821 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:25:07,251 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 10888 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:25:07,254 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:25:10,078 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:25:10,254 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:25:10,371 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:25:10,634 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:25:11,327 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:25:11,365 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:25:12,636 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:25:15,184 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:25:16,296 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:25:16,338 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:25:16,414 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:25:16,637 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:25:16,641 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:25:16,644 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:25:16,649 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:25:16,653 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:25:16,656 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:25:16,659 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:25:16,663 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:25:16,666 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:25:16,671 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:25:16,674 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:25:16,678 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:25:16,681 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:25:16,686 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:25:16,692 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:25:16,695 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:25:16,698 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:25:16,703 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:25:16,706 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:25:16,710 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:25:16,861 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.041 seconds (JVM running for 16.704)
+2022-08-24 19:25:16,987 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:25:17,018 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:27:51,109 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 14808 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:27:51,110 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:27:54,233 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:27:54,399 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:27:54,488 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:27:54,736 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:27:55,460 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:27:55,512 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:27:56,858 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:27:59,530 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:28:00,825 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:28:00,876 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:28:00,974 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:28:01,210 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:28:01,214 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:28:01,218 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:28:01,222 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:28:01,226 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:28:01,230 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:28:01,233 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:28:01,238 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:28:01,242 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:28:01,246 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:28:01,249 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:28:01,255 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:28:01,258 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:28:01,262 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:28:01,269 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:28:01,273 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:28:01,277 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:28:01,281 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:28:01,286 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:28:01,290 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:28:01,449 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.778 seconds (JVM running for 17.742)
+2022-08-24 19:28:01,562 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:28:01,588 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:45:33,343 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 1204 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:45:33,346 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:45:36,434 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:45:36,632 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:45:36,780 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:45:37,185 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:45:37,927 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:45:37,970 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:45:39,550 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:45:42,329 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:45:43,453 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:45:43,503 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:45:43,576 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:45:43,793 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:45:43,800 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:45:43,803 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:45:43,807 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:45:43,811 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:45:43,815 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:45:43,819 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:45:43,823 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:45:43,827 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:45:43,831 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:45:43,834 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:45:43,837 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:45:43,841 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:45:43,846 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:45:43,853 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:45:43,856 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:45:43,861 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:45:43,865 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:45:43,868 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:45:43,872 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:45:44,016 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 11.206 seconds (JVM running for 18.782)
+2022-08-24 19:45:44,130 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:45:44,159 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:52:40,226 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 488 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:52:40,228 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:52:46,150 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:52:46,399 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:52:46,526 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:52:46,858 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:52:47,856 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:52:47,956 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:52:50,144 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:52:54,369 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:52:56,157 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:52:56,220 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:52:56,329 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:52:56,635 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:52:56,642 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:52:56,647 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:52:56,653 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:52:56,658 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:52:56,663 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:52:56,668 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:52:56,676 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:52:56,682 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:52:56,690 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:52:56,695 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:52:56,700 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:52:56,707 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:52:56,711 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:52:56,722 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:52:56,727 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:52:56,731 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:52:56,734 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:52:56,738 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:52:56,743 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:52:56,942 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 17.297 seconds (JVM running for 27.134)
+2022-08-24 19:52:57,166 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:52:57,205 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:54:25,742 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 13052 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:54:25,744 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:54:28,775 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:54:28,916 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:54:29,018 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:54:29,289 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:54:29,723 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:54:29,762 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:54:31,122 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:54:33,907 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:54:35,116 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:54:35,167 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:54:35,245 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:54:35,471 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:54:35,479 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:54:35,483 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:54:35,487 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:54:35,491 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:54:35,494 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:54:35,499 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:54:35,503 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:54:35,506 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:54:35,510 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:54:35,513 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:54:35,519 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:54:35,524 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:54:35,531 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:54:35,535 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:54:35,539 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:54:35,543 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:54:35,548 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:54:35,552 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:54:35,556 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:54:35,713 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.427 seconds (JVM running for 22.103)
+2022-08-24 19:54:35,829 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:54:35,859 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 19:59:45,982 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 13376 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 19:59:45,984 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 19:59:49,030 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 19:59:49,161 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 19:59:49,250 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 19:59:49,491 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 19:59:49,953 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 19:59:49,990 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 19:59:51,328 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 19:59:53,948 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 19:59:55,079 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 19:59:55,119 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 19:59:55,192 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 19:59:55,409 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 19:59:55,416 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 19:59:55,419 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 19:59:55,423 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 19:59:55,427 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 19:59:55,431 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 19:59:55,434 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 19:59:55,438 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 19:59:55,443 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 19:59:55,446 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 19:59:55,449 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 19:59:55,453 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 19:59:55,458 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 19:59:55,466 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 19:59:55,469 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 19:59:55,475 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 19:59:55,478 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 19:59:55,482 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 19:59:55,485 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 19:59:55,489 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 19:59:55,653 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.107 seconds (JVM running for 21.737)
+2022-08-24 19:59:55,754 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 19:59:55,780 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 20:06:24,711 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 9840 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 20:06:24,713 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 20:06:27,702 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 20:06:27,840 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 20:06:27,945 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 20:06:28,211 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 20:06:28,651 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 20:06:28,688 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 20:06:30,044 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 20:06:32,830 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 20:06:34,007 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 20:06:34,050 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 20:06:34,128 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 20:06:34,362 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 20:06:34,369 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 20:06:34,372 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 20:06:34,376 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 20:06:34,381 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 20:06:34,384 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 20:06:34,388 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 20:06:34,393 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 20:06:34,397 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 20:06:34,400 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 20:06:34,404 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 20:06:34,408 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 20:06:34,412 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 20:06:34,420 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 20:06:34,423 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 20:06:34,427 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 20:06:34,431 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 20:06:34,434 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 20:06:34,437 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 20:06:34,441 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 20:06:34,588 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.305 seconds (JVM running for 22.289)
+2022-08-24 20:06:34,698 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 20:06:34,726 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 20:15:22,908 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 14840 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 20:15:22,913 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 20:15:26,035 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 20:15:26,163 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 20:15:26,268 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 20:15:26,537 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 20:15:27,110 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 20:15:27,151 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 20:15:28,519 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 20:15:31,086 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 20:15:32,203 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 20:15:32,244 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 20:15:32,314 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 20:15:32,535 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 20:15:32,542 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 20:15:32,546 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 20:15:32,551 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 20:15:32,554 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 20:15:32,558 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 20:15:32,562 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 20:15:32,567 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 20:15:32,570 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 20:15:32,573 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 20:15:32,577 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 20:15:32,580 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 20:15:32,585 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 20:15:32,611 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 20:15:32,615 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 20:15:32,619 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 20:15:32,622 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 20:15:32,625 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 20:15:32,628 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 20:15:32,637 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 20:15:32,778 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.322 seconds (JVM running for 22.453)
+2022-08-24 20:15:32,882 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 20:15:32,916 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-08-24 20:23:33,986 INFO com.tweetapp.TweetApplicationTests [main] Starting TweetApplicationTests using Java 11.0.12 on ctsjava762 with PID 13888 (started by cogjava1672 in C:\Users\cogjava1672\git\tweet-app-backend\tweet-app)
+2022-08-24 20:23:33,988 INFO com.tweetapp.TweetApplicationTests [main] The following profiles are active: nonprod
+2022-08-24 20:23:37,038 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-24 20:23:37,198 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-08-24 20:23:37,295 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-24 20:23:37,554 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-24 20:23:37,996 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-24 20:23:38,036 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-08-24 20:23:39,410 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-24 20:23:42,115 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-24 20:23:43,186 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-08-24 20:23:43,227 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-08-24 20:23:43,299 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-08-24 20:23:43,507 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_1
+2022-08-24 20:23:43,516 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingDELETE_1
+2022-08-24 20:23:43,519 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_2
+2022-08-24 20:23:43,523 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_3
+2022-08-24 20:23:43,527 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_4
+2022-08-24 20:23:43,532 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_5
+2022-08-24 20:23:43,536 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_6
+2022-08-24 20:23:43,539 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_7
+2022-08-24 20:23:43,545 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_8
+2022-08-24 20:23:43,548 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_9
+2022-08-24 20:23:43,551 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_10
+2022-08-24 20:23:43,554 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_11
+2022-08-24 20:23:43,557 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_12
+2022-08-24 20:23:43,566 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_13
+2022-08-24 20:23:43,570 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_14
+2022-08-24 20:23:43,572 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_15
+2022-08-24 20:23:43,577 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_16
+2022-08-24 20:23:43,580 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_17
+2022-08-24 20:23:43,582 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_18
+2022-08-24 20:23:43,586 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: handleUsingGET_19
+2022-08-24 20:23:43,739 INFO com.tweetapp.TweetApplicationTests [main] Started TweetApplicationTests in 10.174 seconds (JVM running for 21.437)
+2022-08-24 20:23:43,852 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-08-24 20:23:43,890 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

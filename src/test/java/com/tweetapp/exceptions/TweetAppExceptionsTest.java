@@ -5,12 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-class TweetAppExceptionsTest {
-    /**
-     * Method under test: {@link TweetAppExceptions#TweetAppExceptions()}
-     */
+public class TweetAppExceptionsTest {
+  
     @Test
-    void testConstructor() {
+  public  void testConstructor() {
         TweetAppExceptions actualTweetAppExceptions = new TweetAppExceptions();
         assertNull(actualTweetAppExceptions.getCause());
         assertEquals(0, actualTweetAppExceptions.getSuppressed().length);
@@ -18,11 +16,8 @@ class TweetAppExceptionsTest {
         assertNull(actualTweetAppExceptions.getLocalizedMessage());
     }
 
-    /**
-     * Method under test: {@link TweetAppExceptions#TweetAppExceptions(String)}
-     */
     @Test
-    void testConstructor2() {
+   public void testConstructor2() {
         TweetAppExceptions actualTweetAppExceptions = new TweetAppExceptions("Exceptions");
         assertNull(actualTweetAppExceptions.getCause());
         assertEquals(0, actualTweetAppExceptions.getSuppressed().length);

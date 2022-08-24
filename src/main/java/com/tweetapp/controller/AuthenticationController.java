@@ -1,8 +1,11 @@
 package com.tweetapp.controller;
 
+import static com.tweetapp.constants.Constants.INCORRECT_USERNAME_OR_PASS;
+
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tweetapp.model.User;
 import com.tweetapp.repository.UsersRepository;
-import static com.tweetapp.constants.Constants.*;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -29,7 +31,7 @@ public class AuthenticationController {
 	private UsersRepository usersRepository;
 	
 	@GetMapping("/authenticate")
-	public HashMap<String, String> authenticate(@RequestHeader(value = "Authorization") String authHeader) {
+	public Map<String, String> authenticate(@RequestHeader(value = "Authorization") String authHeader) {
 		HashMap<String, String> map = new HashMap<>();
 		String user = getUser(authHeader);
 		String[] data = user.split(":");

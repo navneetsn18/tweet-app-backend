@@ -15,7 +15,7 @@ import com.tweetapp.model.User;
 public class AppUser implements UserDetails {
 
 	private Collection<? extends GrantedAuthority> authorities;
-	private User user;
+	private transient User user;
 
 	public AppUser(User user) {
 		// TODO Auto-generated constructor stub

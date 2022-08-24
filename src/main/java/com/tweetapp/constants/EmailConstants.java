@@ -3,7 +3,7 @@ package com.tweetapp.constants;
 public class EmailConstants {
 	public static final String SIMPLE_MAIL_TRANSFER_PROTOCOL = "smtp";
 	public static final String USERNAME = "testingfornsn@gmail.com";
-	public static final String PASSWORD = "hpqsumpsaodozwdb";
+	public static final String PASS = "hpqsumpsaodozwdb";
 	public static final String FROM_EMAIL = "testingfornsn@gmail.com";
 	public static final String CC_EMAIL = "";
 	public static final String EMAIL_SUBJECT = "Reset Tweet App Password";

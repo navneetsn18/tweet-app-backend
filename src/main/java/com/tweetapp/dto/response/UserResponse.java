@@ -8,7 +8,7 @@ import com.tweetapp.dto.UserDto;
 public class UserResponse implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private List<UserDto> userDtos;
+	private transient List<UserDto> userDtos;
 	private String status;
 
 	public UserResponse() {
