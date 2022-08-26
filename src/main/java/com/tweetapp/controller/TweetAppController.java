@@ -1,8 +1,20 @@
 package com.tweetapp.controller;
 
+import static com.tweetapp.constants.Constants.DATA_FOUND;
+import static com.tweetapp.constants.Constants.DELETED;
+import static com.tweetapp.constants.Constants.LIKE_DISLIKE;
+import static com.tweetapp.constants.Constants.LOGGED_OUT;
+import static com.tweetapp.constants.Constants.PASSWORD_CHANGED;
+import static com.tweetapp.constants.Constants.REPLIED;
+import static com.tweetapp.constants.Constants.TOPIC;
+import static com.tweetapp.constants.Constants.TWEET_POSTED;
+import static com.tweetapp.constants.Constants.TWEET_UPDATED;
+import static com.tweetapp.constants.Constants.USER_ADDED;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +34,6 @@ import com.tweetapp.dto.response.TweetResponse;
 import com.tweetapp.dto.response.UserResponse;
 import com.tweetapp.service.TweetsService;
 import com.tweetapp.service.UserService;
-import static com.tweetapp.constants.Constants.*;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -34,6 +45,12 @@ public class TweetAppController {
 
 	@Autowired
 	private TweetsService tweetsService;
+
+	private KafkaTemplate<String, String> kafkaTemplate;
+
+	public TweetAppController(KafkaTemplate<String, String> kafkaTemplate) {
+		this.kafkaTemplate = kafkaTemplate;
+	}
 
 	@PostMapping(value = "user/register", produces = "application/json")
 	public ResponseEntity<UserResponse> register(@RequestBody Register register) {
@@ -52,7 +69,7 @@ public class TweetAppController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
-	
+
 	@GetMapping(value = "user/forgotpassword/{username}", produces = "application/json")
 	public ResponseEntity<UserResponse> forgotPassword(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.forgotPassword(username);
@@ -88,7 +105,7 @@ public class TweetAppController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(userResponse);
 	}
-	
+
 	@GetMapping(value = "user/logout/{username}", produces = "application/json")
 	public ResponseEntity<UserResponse> logout(@PathVariable(name = "username") String username) {
 		UserResponse userResponse = userService.logout(username);
@@ -120,6 +137,8 @@ public class TweetAppController {
 	public ResponseEntity<TweetResponse> postNewTweet(@RequestBody PostTweet postTweet) {
 		TweetResponse tweetResponse = tweetsService.postTweet(postTweet);
 		if (tweetResponse.getStatus().equals(TWEET_POSTED)) {
+			kafkaTemplate.send(TOPIC, "Added Tweet : " + Long.toString(tweetResponse.getTweetDtos().get(0).getId())
+					+ " --> " + postTweet.getTweet());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
@@ -129,22 +148,27 @@ public class TweetAppController {
 	public ResponseEntity<TweetResponse> updateATweet(@RequestBody UpdateTweet updateTweet) {
 		TweetResponse tweetResponse = tweetsService.updateTweet(updateTweet);
 		if (tweetResponse.getStatus().equals(TWEET_UPDATED)) {
+			kafkaTemplate.send(TOPIC, "Updated Tweet : " + Long.toString(updateTweet.getId())
+					+ " --> " + updateTweet.getTweet());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@DeleteMapping(value = "tweets/delete/{username}/{id}", produces = "application/json")
-	public ResponseEntity<TweetResponse> deleteTweet(@PathVariable("username") String username, @PathVariable("id") Long id) {
+	public ResponseEntity<TweetResponse> deleteTweet(@PathVariable("username") String username,
+			@PathVariable("id") Long id) {
 		TweetResponse tweetResponse = tweetsService.deleteTweet(username, id);
 		if (tweetResponse.getStatus().equals(DELETED)) {
+			kafkaTemplate.send(TOPIC, "Deleted Tweet : " + Long.toString(id) + " by --> " + username);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
 	}
 
 	@PutMapping(value = "tweets/like/{username}/{id}", produces = "application/json")
-	public ResponseEntity<TweetResponse> likeTweet(@PathVariable("id") Long id, @PathVariable("username") String username) {
+	public ResponseEntity<TweetResponse> likeTweet(@PathVariable("id") Long id,
+			@PathVariable("username") String username) {
 		TweetResponse tweetResponse = tweetsService.likeTweet(id, username);
 		if (tweetResponse.getStatus().equals(LIKE_DISLIKE)) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
@@ -156,6 +180,8 @@ public class TweetAppController {
 	public ResponseEntity<TweetResponse> replyToTweet(@RequestBody TweetReply tweetReply) {
 		TweetResponse tweetResponse = tweetsService.replyTweet(tweetReply);
 		if (tweetResponse.getStatus().equals(REPLIED)) {
+			kafkaTemplate.send(TOPIC, "Replied To Tweet : " + Long.toString(tweetReply.getId()) + " by "
+					+ tweetReply.getReply().get(0).getUsername() + " --> " + tweetReply.getReply().get(0).getReply());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);

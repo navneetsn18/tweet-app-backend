@@ -16,6 +16,7 @@ public class Constants {
 	public static final String DELETED = "Deleted Successfully!";
 	public static final String REPLIED = "Replied Successfully!";
 	public static final String LIKE_DISLIKE = "Like/Dislike Success!";
+	public static final String TOPIC = "Tweet-App";
 	
 	private Constants() {
 		
