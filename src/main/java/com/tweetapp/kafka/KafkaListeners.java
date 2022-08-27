@@ -1,18 +1,20 @@
 package com.tweetapp.kafka;
 
-import java.util.logging.Logger;
-import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import static com.tweetapp.constants.Constants.TOPIC;
+import static com.tweetapp.constants.Constants.LISTENER;;
 
 @Component
 public class KafkaListeners {
 
-	Logger logger = Logger.getLogger(KafkaListeners.class.getName());
+	Logger logger = LoggerFactory.getLogger(KafkaListeners.class);
 
 	@KafkaListener(topics = TOPIC, groupId = "groupd_id")
 	void listener(String data) {
-		logger.log(Level.INFO, "Listener recieved: {0}", data);
+		String output = LISTENER + data;
+		logger.info(output);
 	}
 }
