@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "*")
 public class TweetApplication {
 	public static void main(String[] args) {
-		System.out.println("Tweet App Started At Port 8081..");
 		SpringApplication.run(TweetApplication.class, args);
 	}
 }

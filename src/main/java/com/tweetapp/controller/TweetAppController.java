@@ -10,6 +10,7 @@ import static com.tweetapp.constants.Constants.TOPIC;
 import static com.tweetapp.constants.Constants.TWEET_POSTED;
 import static com.tweetapp.constants.Constants.TWEET_UPDATED;
 import static com.tweetapp.constants.Constants.USER_ADDED;
+import static com.tweetapp.constants.Constants.FORWARD;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -138,7 +139,7 @@ public class TweetAppController {
 		TweetResponse tweetResponse = tweetsService.postTweet(postTweet);
 		if (tweetResponse.getStatus().equals(TWEET_POSTED)) {
 			kafkaTemplate.send(TOPIC, "Added Tweet : " + Long.toString(tweetResponse.getTweetDtos().get(0).getId())
-					+ " --> " + postTweet.getTweet());
+					+ FORWARD + postTweet.getTweet());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
@@ -149,7 +150,7 @@ public class TweetAppController {
 		TweetResponse tweetResponse = tweetsService.updateTweet(updateTweet);
 		if (tweetResponse.getStatus().equals(TWEET_UPDATED)) {
 			kafkaTemplate.send(TOPIC, "Updated Tweet : " + Long.toString(updateTweet.getId())
-					+ " --> " + updateTweet.getTweet());
+					+ FORWARD + updateTweet.getTweet());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
@@ -181,7 +182,7 @@ public class TweetAppController {
 		TweetResponse tweetResponse = tweetsService.replyTweet(tweetReply);
 		if (tweetResponse.getStatus().equals(REPLIED)) {
 			kafkaTemplate.send(TOPIC, "Replied To Tweet : " + Long.toString(tweetReply.getId()) + " by "
-					+ tweetReply.getReply().get(0).getUsername() + " --> " + tweetReply.getReply().get(0).getReply());
+					+ tweetReply.getReply().get(0).getUsername() + FORWARD + tweetReply.getReply().get(0).getReply());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);

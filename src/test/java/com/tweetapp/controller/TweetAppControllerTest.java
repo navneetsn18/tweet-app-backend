@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.ResultActions;
@@ -31,7 +32,10 @@ import com.tweetapp.service.UserService;
 
 @ContextConfiguration(classes = { TweetAppController.class })
 @ExtendWith(SpringExtension.class)
-public class TweetAppControllerTest {
+class TweetAppControllerTest {
+	@MockBean
+	private KafkaTemplate<String, String> kafkaTemplate;
+
 	@Autowired
 	private TweetAppController tweetAppController;
 
@@ -42,11 +46,11 @@ public class TweetAppControllerTest {
 	private UserService userService;
 
 	@Test
-	public void testResetPassword() throws Exception {
+	void testResetPassword() throws Exception {
 		when(userService.resetPassword((ForgotPassword) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 
 		ForgotPassword forgotPassword = new ForgotPassword();
-		forgotPassword.setPassword("pass");
+		forgotPassword.setPassword("iloveyou");
 		forgotPassword.setUsername("janedoe");
 		String content = (new ObjectMapper()).writeValueAsString(forgotPassword);
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.post("/api/v1.0/user/resetpassword")
@@ -59,7 +63,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testForgotPassword() throws Exception {
+	void testForgotPassword() throws Exception {
 		when(userService.forgotPassword((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
 				.get("/api/v1.0/user/forgotpassword/{username}", "janedoe");
@@ -71,7 +75,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testGetAllUsers() throws Exception {
+	void testGetAllUsers() throws Exception {
 		when(userService.getAllUsers()).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/all");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -82,7 +86,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testGetAllLoggedInUsers() throws Exception {
+	void testGetAllLoggedInUsers() throws Exception {
 		when(userService.getAllLoggedInUsers()).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/getallloggedinusers");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -93,7 +97,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testLogout() throws Exception {
+	void testLogout() throws Exception {
 		when(userService.logout((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/logout/{username}",
 				"janedoe");
@@ -105,7 +109,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testGetAllTweets() throws Exception {
+	void testGetAllTweets() throws Exception {
 		when(tweetsService.getAllTweets()).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/tweets/all");
 		ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(tweetAppController).build()
@@ -116,7 +120,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testDeleteTweet() throws Exception {
+	void testDeleteTweet() throws Exception {
 		when(tweetsService.deleteTweet((String) any(), (Long) any()))
 				.thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
@@ -129,7 +133,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testLikeTweet() throws Exception {
+	void testLikeTweet() throws Exception {
 		when(tweetsService.likeTweet((Long) any(), (String) any()))
 				.thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
@@ -142,7 +146,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testGetAllTweetsOfUser() throws Exception {
+	void testGetAllTweetsOfUser() throws Exception {
 		when(tweetsService.getTweetsByUsername((String) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/tweets/{username}",
 				"janedoe");
@@ -154,7 +158,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testPostNewTweet() throws Exception {
+	void testPostNewTweet() throws Exception {
 		when(tweetsService.postTweet((PostTweet) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		PostTweet postTweet = new PostTweet();
@@ -171,14 +175,14 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testRegister() throws Exception {
+	void testRegister() throws Exception {
 		when(userService.registerUser((Register) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 
 		Register register = new Register();
 		register.setEmail("jane.doe@example.org");
 		register.setFirstName("Jane");
 		register.setLastName("Doe");
-		register.setPassword("pass");
+		register.setPassword("iloveyou");
 		register.setUsername("janedoe");
 		String content = (new ObjectMapper()).writeValueAsString(register);
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.post("/api/v1.0/user/register")
@@ -191,7 +195,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testReplyToTweet() throws Exception {
+	void testReplyToTweet() throws Exception {
 		when(tweetsService.replyTweet((TweetReply) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		TweetReply tweetReply = new TweetReply();
@@ -208,7 +212,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testSearchByUsername() throws Exception {
+	void testSearchByUsername() throws Exception {
 		when(userService.findUser((String) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1.0/user/search/{username}",
 				"janedoe");
@@ -220,7 +224,7 @@ public class TweetAppControllerTest {
 	}
 
 	@Test
-	public void testUpdateATweet() throws Exception {
+	void testUpdateATweet() throws Exception {
 		when(tweetsService.updateTweet((UpdateTweet) any())).thenReturn(new TweetResponse(new ArrayList<>(), "?"));
 
 		UpdateTweet updateTweet = new UpdateTweet();
