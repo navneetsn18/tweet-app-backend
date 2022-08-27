@@ -21,7 +21,7 @@ public class ReplyTest {
 		actualReply.setReply("Reply");
 		actualReply.setUsername("janedoe");
 		assertSame(fromResult, actualReply.getDate());
-		assertEquals("Reply", actualReply.getReply());
+		assertEquals("Reply", actualReply.getReplyMsg());
 		assertEquals("janedoe", actualReply.getUsername());
 	}
 
@@ -36,7 +36,7 @@ public class ReplyTest {
 		actualReply.setReply("Reply");
 		actualReply.setUsername("janedoe");
 		assertSame(fromResult, actualReply.getDate());
-		assertEquals("Reply", actualReply.getReply());
+		assertEquals("Reply", actualReply.getReplyMsg());
 		assertEquals("janedoe", actualReply.getUsername());
 	}
 }

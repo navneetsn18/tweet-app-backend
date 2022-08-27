@@ -38,19 +38,23 @@ public class TweetServiceImpl implements TweetsService {
 		List<TweetDto> tweetDtos = new ArrayList<>();
 		try {
 			List<Tweets> tweets = tweetRepository.findAll();
-			for (Tweets tweet : tweets) {
-				TweetDto tweetDto = new TweetDto(tweet.getId(), simpleDateFormat.format(tweet.getDate()),
-						simpleTimeFormat.format(tweet.getDate()), tweet.getUsername(), tweet.getTweet(),
-						tweet.getLikes(), tweet.getReply());
-				tweetDtos.add(tweetDto);
-			}
-			Collections.reverse(tweetDtos);
-			tweetResponse.setTweetDtos(tweetDtos);
-			tweetResponse.setStatus(DATA_FOUND);
+			getTweets(tweetResponse, tweetDtos, tweets);
 		} catch (Exception e) {
 			tweetResponse.setStatus(ERROR_OCCURED);
 		}
 		return tweetResponse;
+	}
+
+	private void getTweets(TweetResponse tweetResponse, List<TweetDto> tweetDtos, List<Tweets> tweets) {
+		for (Tweets tweet : tweets) {
+			TweetDto tweetDto = new TweetDto(tweet.getId(), simpleDateFormat.format(tweet.getDate()),
+					simpleTimeFormat.format(tweet.getDate()), tweet.getUsername(), tweet.getTweet(),
+					tweet.getLikes(), tweet.getReply());
+			tweetDtos.add(tweetDto);
+		}
+		Collections.reverse(tweetDtos);
+		tweetResponse.setTweetDtos(tweetDtos);
+		tweetResponse.setStatus(DATA_FOUND);
 	}
 
 	@Override
@@ -59,15 +63,7 @@ public class TweetServiceImpl implements TweetsService {
 		List<TweetDto> tweetDtos = new ArrayList<>();
 		try {
 			List<Tweets> tweets = tweetRepository.findByUsername(username);
-			for (Tweets tweet : tweets) {
-				TweetDto tweetDto = new TweetDto(tweet.getId(), simpleDateFormat.format(tweet.getDate()),
-						simpleTimeFormat.format(tweet.getDate()), tweet.getUsername(), tweet.getTweet(),
-						tweet.getLikes(), tweet.getReply());
-				tweetDtos.add(tweetDto);
-			}
-			Collections.reverse(tweetDtos);
-			tweetResponse.setTweetDtos(tweetDtos);
-			tweetResponse.setStatus(DATA_FOUND);
+			getTweets(tweetResponse, tweetDtos, tweets);
 		} catch (Exception e) {
 			tweetResponse.setStatus(ERROR_OCCURED);
 		}

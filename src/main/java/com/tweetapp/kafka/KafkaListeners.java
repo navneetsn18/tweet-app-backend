@@ -13,6 +13,6 @@ public class KafkaListeners {
 
 	@KafkaListener(topics = TOPIC, groupId = "groupd_id")
 	void listener(String data) {
-		logger.log(Level.INFO, "Listener recieved: {}", data);
+		logger.log(Level.INFO, "Listener recieved: {0}", data);
 	}
 }

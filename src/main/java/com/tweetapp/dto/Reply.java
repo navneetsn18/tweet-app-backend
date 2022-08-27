@@ -8,17 +8,17 @@ import javax.persistence.Embeddable;
 public class Reply {
 
 	private String username;
-	private String reply;
+	private String replyMsg;
 	private Date date;
 
 	public Reply() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reply(String username, String reply, Date date) {
+	public Reply(String username, String replyMsg, Date date) {
 		super();
 		this.username = username;
-		this.reply = reply;
+		this.replyMsg = replyMsg;
 		this.date = date;
 	}
 
@@ -30,12 +30,12 @@ public class Reply {
 		this.username = username;
 	}
 
-	public String getReply() {
-		return reply;
+	public String getReplyMsg() {
+		return replyMsg;
 	}
 
-	public void setReply(String reply) {
-		this.reply = reply;
+	public void setReply(String replyMsg) {
+		this.replyMsg = replyMsg;
 	}
 
 	public Date getDate() {

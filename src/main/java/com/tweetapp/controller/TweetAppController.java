@@ -182,7 +182,7 @@ public class TweetAppController {
 		TweetResponse tweetResponse = tweetsService.replyTweet(tweetReply);
 		if (tweetResponse.getStatus().equals(REPLIED)) {
 			kafkaTemplate.send(TOPIC, "Replied To Tweet : " + Long.toString(tweetReply.getId()) + " by "
-					+ tweetReply.getReply().get(0).getUsername() + FORWARD + tweetReply.getReply().get(0).getReply());
+					+ tweetReply.getReply().get(0).getUsername() + FORWARD + tweetReply.getReply().get(0).getReplyMsg());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(tweetResponse);
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(tweetResponse);
