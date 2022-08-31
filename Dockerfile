@@ -1,4 +1,5 @@
 FROM openjdk:8
 EXPOSE 8081
-ADD target/tweet-app.jar tweet-app.jar
-ENTRYPOINT ["java","-jar","/tweet-app.jar"]
+COPY target/tweet-app.jar tweet-app.jar
+ENV JAVA_OPTS=""
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","tweet-app.jar"] 
