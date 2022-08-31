@@ -136,6 +136,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>tweet-app</finalName>
 	</build>
 
 </project>
