@@ -22,7 +22,7 @@ services:
 
   my-app:
     image: navneetsn18/tweet-app-backend:latest
-    container_name: navneetsn18/tweet-app-backend
+    container_name: tweet-app-backend
     environment:
       SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
     ports:
