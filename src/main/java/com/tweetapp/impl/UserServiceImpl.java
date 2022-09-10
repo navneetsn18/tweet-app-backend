@@ -98,6 +98,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserResponse registerUser(Register register) {
 		UserResponse userResponse = new UserResponse();
+		List<UserDto> userDtos = new ArrayList<>();
 		try {
 			Matcher matcher = pattern.matcher(register.getEmail());
 			if (matcher.matches() == false) {
@@ -109,11 +110,12 @@ public class UserServiceImpl implements UserService {
 			} else {
 				User user = new User(register.getFirstName(), register.getLastName(), register.getUsername(),
 						register.getEmail(), passwordEncoder().encode(register.getPassword()), false);
-				userRepository.save(user);
 				UserDto userDto = new UserDto(user.getFirstName(), user.getLastName(), user.getUsername(),
 						user.getEmail(), null, user.isLoggedin());
-				userResponse.setUserDtos(List.of(userDto));
+				userDtos.add(userDto);
+				userResponse.setUserDtos(userDtos);
 				userResponse.setStatus(USER_ADDED);
+				userRepository.save(user);
 			}
 
 		} catch (Exception e) {
