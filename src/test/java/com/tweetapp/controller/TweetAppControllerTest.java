@@ -50,7 +50,7 @@ class TweetAppControllerTest {
 		when(userService.resetPassword((ForgotPassword) any())).thenReturn(new UserResponse(new ArrayList<>(), "?"));
 
 		ForgotPassword forgotPassword = new ForgotPassword();
-		forgotPassword.setPassword("iloveyou");
+		forgotPassword.setPassword("pass");
 		forgotPassword.setUsername("janedoe");
 		String content = (new ObjectMapper()).writeValueAsString(forgotPassword);
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.post("/api/v1.0/user/resetpassword")
@@ -182,7 +182,7 @@ class TweetAppControllerTest {
 		register.setEmail("jane.doe@example.org");
 		register.setFirstName("Jane");
 		register.setLastName("Doe");
-		register.setPassword("iloveyou");
+		register.setPassword("pass");
 		register.setUsername("janedoe");
 		String content = (new ObjectMapper()).writeValueAsString(register);
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.post("/api/v1.0/user/register")
